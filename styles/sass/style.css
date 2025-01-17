@@ -2011,7 +2011,7 @@ img {
 .wpo-site-header .header-right {
   display: flex;
   justify-content: flex-end;
-  z-index: 991;
+  z-index: 500;
   position: relative;
   align-items: center;
 }

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Services from '../../api/service'
 import SectionTitle2 from '../SectionTitle2'
 import Image from 'next/image'
+// import lighting from '/public/images/Sample collection/Rough Surface/sample9.jpg'
 
 
 

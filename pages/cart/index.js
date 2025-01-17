@@ -1,5 +1,4 @@
-import React, { Fragment } from "react";
-import Navbar from '../../components/Navbar/Navbar';
+import React, { Fragment, useState } from "react";
 import PageTitle from "../../components/pagetitle/PageTitle";
 import Scrollbar from "../../components/scrollbar/scrollbar";
 import { Button, Grid } from "@mui/material";
@@ -13,17 +12,18 @@ import {
 } from "../../store/actions/action";
 import Footer from "../../components/footer/Footer";
 import Logo from '/public/images/logo.svg'
+import Image from "next/image";
+import Navbar2 from "../../components/Navbar2/Navbar2";
 
 const CartPage = (props) => {
   const ClickHandler = () => {
     window.scrollTo(10, 0);
   };
-
   const { carts } = props;
 
   return (
     <Fragment>
-      <Navbar Logo={Logo} />
+      <Navbar2 Logo={Logo} hclass={'wpo-header-style-2'} />
       <PageTitle pageTitle={"Cart"} pagesub={"Cart"} />
       <div className="cart-area section-padding">
         <div className="container">
@@ -39,6 +39,7 @@ const CartPage = (props) => {
                           <th className="product-2">Product Name</th>
                           <th className="pr">Quantity</th>
                           <th className="ptice">Price</th>
+                          <th className="installation">Installation</th>
                           <th className="stock">Total Price</th>
                           <th className="remove remove-b">Action</th>
                         </tr>
@@ -49,15 +50,17 @@ const CartPage = (props) => {
                           carts.map((catItem, crt) => (
                             <tr key={crt}>
                               <td className="images">
-                                <img src={catItem.proImg} alt="" />
+                                {/* <img src={catItem.mainImg} alt="" /> */}
+                                <Image src={catItem.mainImg} alt="icon"></Image>
+                                {/* <Image src={catItem.mainImg}></Image> */}
                               </td>
                               <td className="product">
                                 <ul>
                                   <li className="first-cart">
                                     {catItem.title}
                                   </li>
-                                  <li>Brand : {catItem.brand}</li>
-                                  <li>Size : {catItem.size}</li>
+                                  {/* <li>Brand : {catItem.brand}</li> */}
+                                  {/* <li>Size : {catItem.size}</li> */}
                                 </ul>
                               </td>
                               <td className="stock">
@@ -83,8 +86,9 @@ const CartPage = (props) => {
                                   </Grid>
                                 </div>
                               </td>
-                              <td className="ptice">${catItem.qty * catItem.price}</td>
-                              <td className="stock">${catItem.qty * catItem.price}</td>
+                              <td className="ptice">${catItem.price}</td>
+                              <td className="install">Ksh.{catItem.installationFee? 500  : 0}</td>
+                              <td className="stock">${catItem.installationFee ? catItem.qty * catItem.price + 500 : catItem.qty * catItem.price}</td>
                               <td className="action">
                                 <ul>
                                   <li
@@ -124,17 +128,18 @@ const CartPage = (props) => {
                         Total product<span>( {carts.length} )</span>
                       </li>
                       <li>
-                        Sub Price<span>${totalPrice(carts)}</span>
+                        Sub Price<span>Ksh.{totalPrice(carts)}</span>
                       </li>
-                      <li>
-                        Vat<span>$0</span>
-                      </li>
-                      <li>
+                      {/* <li>
+                        Installation
+                          <span>{x}</span>
+                      </li> */}
+                      {/* <li>
                         Eco Tax<span>$0</span>
                       </li>
                       <li>
                         Delivery Charge<span>$0</span>
-                      </li>
+                      </li> */}
                       <li className="cart-b">
                         Total Price<span>${totalPrice(carts)}</span>
                       </li>

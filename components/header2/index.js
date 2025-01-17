@@ -4,11 +4,15 @@ import Link from "next/link";
 import Image from 'next/image'
 import MobileMenu from '../../components/MobileMenu/MobileMenu'
 import Projects from '../../api/project'
+import { connect } from 'react-redux';
+import { removeFromCart } from '../../store/actions/action';
+import { totalPrice } from '../../utils';
 
 
 const Header2 = (props) => {
     const [menuActive, setMenuState] = useState(false);
-
+    // const [menuActive, setMenuState] = useState(false);
+    const [cartActive, setcartState] = useState(false);
     const ClickHandler = () => {
         window.scrollTo(10, 0);
     }
@@ -16,6 +20,7 @@ const Header2 = (props) => {
     const SubmitHandler = (e) => {
         e.preventDefault()
     }
+    const { carts } = props;
 
     return (
         <header id="header" >
@@ -30,8 +35,10 @@ const Header2 = (props) => {
                             </div>
                             <div className="col-lg-2 col-md-6 col-6">
                                 <div className="navbar-header">
-                                    <Link onClick={ClickHandler} className="navbar-brand" href="/home"><Image src={Logo}
-                                        alt="" /></Link>
+                                    <Link onClick={ClickHandler} className="navbar-brand" href="/home">
+                                        {/* <Image src={Logo} alt="" /> */}
+                                        <Image src="/images/Modern Interior Kenya Logo.png" width={'100'} height={'50'} alt="" />
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-9 col-md-1 col-1">
@@ -74,7 +81,7 @@ const Header2 = (props) => {
                                                 <li><Link onClick={ClickHandler} href="/project/Architecture-Design">Project Single</Link></li>
                                             </ul> */}
                                         {/* </li> */}
-                                        <li className="menu-item-has-children">
+                                        {/* <li className="menu-item-has-children">
                                             <Link onClick={ClickHandler} href="/blog">Blog</Link>
                                             <ul className="sub-menu">
                                                 <li><Link onClick={ClickHandler} href="/blog">Blog right sidebar</Link></li>
@@ -92,7 +99,7 @@ const Header2 = (props) => {
                                                     </ul>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li> */}
                                         <li className="menu-item-has-children">
                                             <Link onClick={ClickHandler} href="/">Pages</Link>
                                             <ul className="sub-menu">
@@ -109,12 +116,78 @@ const Header2 = (props) => {
                                             </ul>
                                         </li>
                                         <li><Link onClick={ClickHandler} href="/contact">Contact</Link></li>
+                                        <li>{cartActive == false}</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div className="col-lg-1 col-md-1 col-2">
+                            
+                            <div className="col-lg-1 col-md-1 col-2 right-menu">
+                                {/* CART */}
                                 <div className="header-right">
-                                    <div className="header-right-menu-wrapper">
+                                    {/* <div className="header-search-form-wrapper">
+                                        <div className="cart-search-contact">
+                                            <button onClick={() => setMenuState(!menuActive)} className="search-toggle-btn"><i
+                                                className={`fi ti-search ${menuActive ? "ti-close" : "fi "}`}></i></button>
+                                            <div className={`header-search-form ${menuActive ? "header-search-content-toggle" : ""}`}>
+                                                <form onSubmit={SubmitHandler}>
+                                                    <div>
+                                                        <input type="text" className="form-control"
+                                                            placeholder="Search here..." />
+                                                        <button type="submit"><i
+                                                            className="fi ti-search"></i></button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div> */}
+                                    <div className="mini-cart">
+                                        <button className="cart-toggle-btn" onClick={() => setcartState(!cartActive)}>
+                                            {" "}
+                                            <i className="fi flaticon-shopping-cart"></i>{" "}
+                                            <span className="cart-count">{carts.length}</span>
+                                        </button>
+                                        <div className={`mini-cart-content ${cartActive ? "mini-cart-content-toggle" : ""}`}>
+                                            <button className="mini-cart-close" onClick={() => setcartState(!cartActive)}><i className="ti-close"></i></button>
+                                            <div className="mini-cart-items">
+                                                {carts &&
+                                                    carts.length > 0 &&
+                                                    carts.map((catItem, crt) => (
+                                                        <div className="mini-cart-item clearfix" key={crt}>
+                                                            <div className="mini-cart-item-image">
+                                                                <Image src={catItem.mainImg}></Image>
+                                                            </div>
+                                                            <div className="mini-cart-item-des">
+                                                                <p>{catItem.title} </p>
+                                                                <span className="mini-cart-item-price">
+                                                                    ${catItem.price} x {" "} {catItem.qty}
+                                                                </span>
+                                                                <span className="mini-cart-item-quantity">
+                                                                    <button
+                                                                        onClick={() =>
+                                                                            props.removeFromCart(catItem.id)
+                                                                        }
+                                                                        className="btn btn-sm btn-danger"
+                                                                    >
+                                                                        <i className="ti-close"></i>
+                                                                    </button>{" "}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                            </div>
+                                            <div className="mini-cart-action clearfix">
+                                                <span className="mini-checkout-price">Subtotal: <span> ${totalPrice(carts)}</span></span>
+                                                <div className="mini-btn">
+                                                    <Link href="/checkout" className="view-cart-btn s1">Checkout</Link>
+                                                    <Link href="/cart" className="view-cart-btn">View Cart</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* RIGHT MENU */}
+                                <div className={`header-right ${cartActive ? 'menu' : ""}`}>
+                                    <div className="header-right-menu-wrapper ">
                                         <div className="header-right-menu">
                                             <div className="right-menu-toggle-btn" onClick={() => setMenuState(!menuActive)}>
                                                 <span></span>
@@ -175,5 +248,9 @@ const Header2 = (props) => {
         </header>
     )
 }
-
-export default Header2;
+const mapStateToProps = (state) => {
+    return {
+        carts: state.cartList.cart,
+    };
+};
+export default connect(mapStateToProps,{removeFromCart})(Header2);

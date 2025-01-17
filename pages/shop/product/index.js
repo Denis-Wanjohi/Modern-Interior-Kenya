@@ -13,17 +13,24 @@ import Image from 'next/image'
 
 import pImg1 from '/public/images/service-single/2.jpg'
 import pImg2 from '/public/images/service-single/3.jpg'
+import { addToCart } from '../../../store/actions/action';
+import { connect } from 'react-redux';
+import cartReducer from '../../../store/reducers/cart';
+import Products from '../../../api/products';
 
 
 
 const SeviceSinglePage = (props) => {
     const router = useRouter()
 
-    const serviceDetails = Services.find(item => item.slug === 'Perfect-Planning')
-
+    const selectedProduct = Products.find(item => item.title === useRouter().pathname.replace('/shop/',''))
+    const addToCartProduct = (product, qty = 1) => {
+        props.addToCart(product,qty)
+    };
     return (
         <Fragment>
             <Navbar2 Logo={Logo} hclass={'wpo-header-style-2'} />
+            {useRouter().pathname.replace('/shop/','')}
             {/* <PageTitle pageTitle={serviceDetails?.sTitle} pagesub={serviceDetails?.sTitle} /> */}
             <div className="wpo-service-single-area section-padding">
                 <div className="container">
@@ -32,10 +39,10 @@ const SeviceSinglePage = (props) => {
                             <div className="wpo-service-single-wrap">
                                 <div className="wpo-service-single-item">
                                     <div className="wpo-service-single-main-img">
-                                        <Image src={serviceDetails?.sImg} alt="service" />
+                                        <Image src={selectedProduct?.mainImg} alt="service" />
                                     </div>
                                     <div className="wpo-service-single-title">
-                                        <h3>{serviceDetails?.sTitle}</h3>
+                                        <h3>{selectedProduct?.title}</h3>
                                     </div>
                                     <div>
                                         <p>Price per Roll: Khs. 500/=</p>
@@ -118,7 +125,8 @@ const SeviceSinglePage = (props) => {
                                 {/* <Discuss /> */}
                             </div>
                         </div>
-                        <ServiceSidebar />
+                        <ServiceSidebar addToCart={addToCartProduct} />
+                        {/* <ServiceSidebar addToCart={addToCartProduct} /> */}
                     </div>
                 </div>
             </div>
@@ -127,4 +135,9 @@ const SeviceSinglePage = (props) => {
         </Fragment>
     )
 };
-export default SeviceSinglePage;
+const mapStateToProps = state => {
+    return {
+        products: state.data.products,
+    }
+}
+export default connect(mapStateToProps,{addToCart}) (SeviceSinglePage);

@@ -17,7 +17,7 @@ export const receiveProducts = (products) => ({
   products,
 });
 
-export const addToCart = (product, qty, color, size) => (dispatch) => {
+export const addToCart = (product, qty, color, size,installationFee) => (dispatch) => {
   toast.success("Item Added to Cart");
   dispatch({
     type: types.ADD_TO_CART,
@@ -25,6 +25,7 @@ export const addToCart = (product, qty, color, size) => (dispatch) => {
     qty,
     color,
     size,
+    installationFee
   });
 };
 

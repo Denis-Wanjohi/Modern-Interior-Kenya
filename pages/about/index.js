@@ -12,7 +12,10 @@ import Testimonial from '../../components/Testimonial';
 import Footer from '../../components/footer/Footer'
 import Scrollbar from '../../components/scrollbar/scrollbar'
 import Logo from '/public/images/logo.svg'
-import abimg from '/public/images/about.jpg'
+// import abimg from '/public/images/about.jpg'
+import abimg from '/public/images/Sample collection/sample 2.jpg'
+
+
 
 
 const AboutPage =() => {

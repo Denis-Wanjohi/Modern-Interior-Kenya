@@ -14,6 +14,7 @@ import Logo from '/public/images/logo.svg'
 
 
 const ProductSinglePage = (props) => {
+    console.log(props)
     const router = useRouter()
 
     const productsArray = api();
@@ -53,7 +54,7 @@ const ProductSinglePage = (props) => {
     )
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = state => { 
     return {
         products: state.data.products,
     }

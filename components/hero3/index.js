@@ -8,6 +8,11 @@ import hImg2 from '/public/images/slider/s3.jpg'
 import hImg3 from '/public/images/slider/s4.jpg'
 import hImg4 from '/public/images/slider/s2.jpg'
 
+import sample1 from '/public/images/Sample collection/White-Gold surface/sample1.jpg'
+import sample2 from '/public/images/Sample collection/White-Gold surface/sample2.jpg'
+import sample3 from '/public/images/Sample collection/White-Gold surface/sample3.jpg'
+import sample4 from '/public/images/Sample collection/White-Gold surface/sample4.jpg'
+import sample5 from '/public/images/Sample collection/White-Gold surface/sample5.jpg'
 
 
 const Hero3 = () => {
@@ -67,16 +72,16 @@ const Hero3 = () => {
                                 <div className="static-hero-slide-img owl-carousel">
                                     <Slider {...settings}>
                                         <div className="slide-img">
-                                            <Image src={hImg1} alt="" />
+                                            <Image src={sample1} alt="" />
                                         </div>
                                         <div className="slide-img">
-                                            <Image src={hImg2} alt="" />
+                                            <Image src={sample2} alt="" />
                                         </div>
                                         <div className="slide-img">
-                                            <Image src={hImg3} alt="" />
+                                            <Image src={sample3} alt="" />
                                         </div>
                                         <div className="slide-img">
-                                            <Image src={hImg4} alt="" />
+                                            <Image src={sample4} alt="" />
                                         </div>
                                     </Slider>
                                 </div>

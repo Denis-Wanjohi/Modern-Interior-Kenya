@@ -25,17 +25,6 @@ const ShopPage = (props) => {
       <Navbar2 Logo={Logo} hclass={'wpo-header-style-2'} />
       <PageTitle pageTitle={"Shop"} pagesub={"Shop"} />
       <section className="wpo-shop-page section-padding">
-        {/* ADD TO CART */}
-        {/* <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <ShopProduct
-                addToCartProduct={addToCartProduct}
-                products={products}
-              />
-            </div>
-          </div>
-        </div> */}
         <ProjectsS2/>
         <ProductSamples/>
       </section>

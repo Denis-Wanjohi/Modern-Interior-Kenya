@@ -18,10 +18,9 @@ const Footer = (props) => {
                         <div className="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
                             <div className="widget about-widget">
                                 <div className="logo widget-title">
-                                    <Link onClick={ClickHandler} className="logo" href="/"><img src='/images/logo-2.svg' alt="" /></Link>
+                                    <Link onClick={ClickHandler} className="logo" href="/"><img src='/images/Modern Interior Kenya Logo.png' alt="" /></Link>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Viverra laoreet ultrices
-                                    donec placerat commodo elementum justo, consequat.</p>
+                                <p>Bringing innovative design solutions to life, blending style and functionality to create inspiring spaces that elevate your environment.</p>
                                 <ul>
                                     <li>
                                         <Link onClick={ClickHandler} href="/">

@@ -1,0 +1,15 @@
+.right-menu{
+    display: flex;
+    justify-content: space-between;
+    .header-right{
+        margin-right: 5px;
+        margin-left: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .menu{
+        // display: none;
+        visibility: hidden;
+        background-color: green;
+    }
+}

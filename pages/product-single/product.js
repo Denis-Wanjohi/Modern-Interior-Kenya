@@ -3,7 +3,7 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 
 const Product = ({ item, addToCart }) => {
-
+  // console.log(item)
   return (
 
     <div className="row align-items-center">

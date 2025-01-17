@@ -32,14 +32,23 @@ import ps1img14 from '/public/images/project-single/14.jpg'
 import psub1img1 from '/public/images/project-single/p1.jpg'
 import psub1img2 from '/public/images/project-single/p2.jpg'
 
-
+import sample7 from '/public/images/Sample collection/Rough Surfaces/sample7.jpg'
+import sample4 from '/public/images/Sample collection/Rough Surfaces/sample4.jpg'
+import sample5 from '/public/images/Sample collection/Rough Surfaces/sample5.jpg'
+import sample6 from '/public/images/Sample collection/Rough Surfaces/sample6.jpg'
+import collection10 from '/public/images/Sample collection/sample 9.jpg'
+import marbleBlack from '/public/images/Sample collection/Marbel/black.jpg'
+import marbleLightGray from '/public/images/Sample collection/Marbel/lightgray.jpg'
+import marbleWhite from '/public/images/Sample collection/Marbel/white.jpg'
+import marbleGray from '/public/images/Sample collection/Marbel/gray.jpg'
+import marbleAllColors from '/public/images/Sample collection/Marbel/all-colors.jpg'
 
 
 const Projects = [
    {
       Id: '1',
       slug: 'Architecture',
-      pImg: pimg1,
+      pImg: sample5,
       ps1img: ps1img1,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -49,7 +58,7 @@ const Projects = [
    {
       Id: '2',
       slug: 'Interior',
-      pImg: pimg2,
+      pImg: sample6,
       ps1img: ps1img2,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -59,7 +68,7 @@ const Projects = [
    {
       Id: '3',
       slug: 'Architecture-Design',
-      pImg: pimg3,
+      pImg: collection10,
       ps1img: ps1img3,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -69,7 +78,7 @@ const Projects = [
    {
       Id: '4',
       slug: 'Architectures-Design',
-      pImg: pimg4,
+      pImg: marbleLightGray,
       ps1img: ps1img4,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -79,7 +88,7 @@ const Projects = [
    {
       Id: '5',
       slug: 'Architectures',
-      pImg: pimg5,
+      pImg: marbleAllColors,
       ps1img: ps1img5,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -89,7 +98,7 @@ const Projects = [
    {
       Id: '6',
       slug: 'Interior-Design',
-      pImg: pimg6,
+      pImg: marbleGray,
       ps1img: ps1img6,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -119,7 +128,7 @@ const Projects = [
    {
       Id: '9',
       slug: 'Architectur',
-      pImg: pimg9,
+      pImg: marbleGray,
       ps1img: ps1img9,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -129,7 +138,7 @@ const Projects = [
    {
       Id: '10',
       slug: 'Architecture',
-      pImg: pimg1,
+      pImg: marbleBlack,
       ps1img: ps1img1,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -139,7 +148,7 @@ const Projects = [
    {
       Id: '11',
       slug: 'Interiore',
-      pImg: pimg2,
+      pImg: marbleWhite,
       ps1img: ps1img2,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -149,7 +158,7 @@ const Projects = [
    {
       Id: '12',
       slug: 'Architecturep',
-      pImg: pimg3,
+      pImg: marbleGray,
       ps1img: ps1img3,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -159,7 +168,7 @@ const Projects = [
    {
       Id: '13',
       slug: 'Architecturev',
-      pImg: pimg10,
+      pImg: sample7,
       ps1img: ps1img10,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
@@ -169,7 +178,7 @@ const Projects = [
    {
       Id: '14',
       slug: 'Architectured',
-      pImg: pimg11,
+      pImg: sample4,
       ps1img: ps1img11,
       psub1img1: psub1img1,
       psub1img2: psub1img2,
