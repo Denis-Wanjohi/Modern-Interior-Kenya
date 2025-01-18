@@ -94,7 +94,7 @@ const Products  = [
         installationFee:false
     },
     {
-        id:5,
+        id:6,
         title:'WPC Dark Wall Panel',
         slug:'wpc-dark-wall-panel',
         price:1150,

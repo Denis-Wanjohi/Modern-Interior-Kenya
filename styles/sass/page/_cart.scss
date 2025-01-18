@@ -2,6 +2,10 @@
  #5.0 cart-page-style
 ===========================*/
 .cart-area {
+    background: $black-bg-color;
+    color: white;
+    border-bottom: white 2px solid;
+    
     .cart-wrapper {
       box-shadow: 0px 5px 15px 0px rgba(68, 68, 68, 0.1);
   
@@ -25,7 +29,7 @@
       border-bottom: 1px solid #f0f0f094;
       text-align: center;
       font-weight: 400;
-      color: #414141;
+      color: #ffffff;
     }
     .cart-wrap th {
       border-bottom: 1px solid #f0f0f094;
@@ -33,9 +37,11 @@
     }
   
     .cart-wrap thead {
-      background: #fff;
-      color: #505050;
+      background: $black-bg-color;
+      border: #333 2px solid;
+      color: #ffffff;
       padding: 40px;
+      font-weight: 900;
     }
     .cart-area form {
       margin: auto;
@@ -193,7 +199,7 @@
       padding: 0;
     }
     .cart-wrap tr:nth-child(even) {
-      background: #fcfcfc;
+      background: #494949;
     }
   
     .cart-wrap .quantity {
@@ -309,7 +315,7 @@
           font-weight: 300;
           font-size: 18px;
           line-height: 21px;
-          color: #414141;
+          color: #f8f5f5;
           padding-bottom: 30px;
   
           &.cart-b {

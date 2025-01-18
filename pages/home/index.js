@@ -22,8 +22,8 @@ const HomePage3 = (props) => {
             <ServiceSection2 />
             <FunFact />
             <ProjectSectionS3 />
-            <Pricing />
-            <BlogSection />
+            {/* <Pricing /> */}
+            {/* <BlogSection /> */}
             <Footer />
             <Scrollbar />
         </div>

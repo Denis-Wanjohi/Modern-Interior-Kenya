@@ -77,7 +77,8 @@ const Footer = (props) => {
                                 </div>
                                 <ul className="d-flex">
                                     {Projects.slice(0, 6).map((project, srv) => (
-                                        <li key={srv}><Link onClick={ClickHandler} href='/project/[slug]' as={`/project/${project.slug}`}><Image src={project.pImg} alt="" /></Link></li>
+                                        <li key={srv}><Image src={project.pImg} alt="" /></li>
+                                        // <li key={srv}><Link onClick={ClickHandler} href='/project/[slug]' as={`/project/${project.slug}`}><Image src={project.pImg} alt="" /></Link></li>
                                     ))}
                                 </ul>
                             </div>

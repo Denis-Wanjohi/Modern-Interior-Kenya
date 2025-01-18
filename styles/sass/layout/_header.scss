@@ -743,6 +743,17 @@
 		color: #888;
 		display: block;
 		margin-top: 3px;
+
+		.installationFee{
+			background: rgb(79, 206, 85);
+			color: white;
+			font-size: 10px;
+			border-radius: 10px;
+			padding-left: 4px;
+			padding-right: 4px;
+			padding-top: 1px;
+			padding-bottom: 1px;
+		}
 	}
 
 	.mini-cart-item-des .mini-cart-item-quantity {

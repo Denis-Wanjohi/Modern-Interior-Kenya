@@ -37,7 +37,7 @@ const Header2 = (props) => {
                                 <div className="navbar-header">
                                     <Link onClick={ClickHandler} className="navbar-brand" href="/home">
                                         {/* <Image src={Logo} alt="" /> */}
-                                        <Image src="/images/Modern Interior Kenya Logo.png" width={'100'} height={'50'} alt="" />
+                                        <Image src="/images/Modern Interior Kenya Logo.png" width={'200'} height={'200'} alt="" />
                                     </Link>
                                 </div>
                             </div>
@@ -59,19 +59,10 @@ const Header2 = (props) => {
                                         <li><Link onClick={ClickHandler} href="/shop">Shop</Link></li>
                                         <li className="menu-item-has-children">
                                             <Link href="/service">Service</Link>
-                                            <ul className="sub-menu">
-                                                <li><Link onClick={ClickHandler} href="/service">Service</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/service-s2">Service S2</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/service/Perfect-Planning">Service Single</Link></li>
-                                            </ul>
                                         </li>
                                         <li className="menu-item-has-children">
                                             <Link onClick={ClickHandler} href="/project">Project</Link>
-                                            <ul className="sub-menu">
-                                                <li><Link onClick={ClickHandler} href="/project">Project</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/project-s2">Project S2</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/project/Architecture-Design">Project Single</Link></li>
-                                            </ul>
+                                            
                                         </li>
                                         {/* <li className="menu-item-has-children">
                                             <Link onClick={ClickHandler} href="/products">Shop</Link> */}
@@ -101,7 +92,7 @@ const Header2 = (props) => {
                                             </ul>
                                         </li> */}
                                         <li className="menu-item-has-children">
-                                            <Link onClick={ClickHandler} href="/">Pages</Link>
+                                            {/* <Link onClick={ClickHandler} href="/">Pages</Link> */}
                                             <ul className="sub-menu">
                                                 <li><Link onClick={ClickHandler} href="/shop">Shop</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/product-single/Black-Timber-Chairs">Shop Single</Link></li>
@@ -159,7 +150,7 @@ const Header2 = (props) => {
                                                             <div className="mini-cart-item-des">
                                                                 <p>{catItem.title} </p>
                                                                 <span className="mini-cart-item-price">
-                                                                    ${catItem.price} x {" "} {catItem.qty}
+                                                                    ${catItem.price} x {" "} {catItem.qty} {catItem.installationFee ? <span className='installationFee'>+installation fee (500)</span>: ""}
                                                                 </span>
                                                                 <span className="mini-cart-item-quantity">
                                                                     <button
@@ -196,13 +187,14 @@ const Header2 = (props) => {
                                             </div>
                                             <div className={`header-right-menu-wrap ${menuActive ? "right-menu-active" : ""}`}>
                                                 <button onClick={() => setMenuState(!menuActive)} className="right-menu-close"><i className="ti-close"></i></button>
-                                                <div className="logo"><Image src={Logo} alt="" /></div>
+                                                <div className="logo"><Image src="/images/Modern Interior Kenya Logo.png" alt="logo" width={"200"} height={"200"} /></div>
                                                 <div className="header-right-sec">
                                                     <div className="project-widget widget">
                                                         <h3>Our Latest Projects</h3>
                                                         <ul>
                                                             {Projects.slice(0, 6).map((project, pot) => (
-                                                                <li key={pot}><Link onClick={ClickHandler} href='/project/[slug]' as={`/project/${project.slug}`}><Image src={project.pImg} alt="" /></Link></li>
+                                                                <li key={pot}><Image src={project.pImg} alt="" /></li>
+                                                                // <li key={pot}><Link onClick={ClickHandler} href='/project/[slug]' as={`/project/${project.slug}`}><Image src={project.pImg} alt="" /></Link></li>
                                                             ))}
                                                         </ul>
                                                     </div>
@@ -221,7 +213,7 @@ const Header2 = (props) => {
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <div className="widget newsletter-widget">
+                                                    {/* <div className="widget newsletter-widget">
                                                         <div className="widget-title">
                                                             <h3>Newsletter</h3>
                                                         </div>
@@ -234,7 +226,7 @@ const Header2 = (props) => {
                                                                 </div>
                                                             </div>
                                                         </form>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
                                         </div>

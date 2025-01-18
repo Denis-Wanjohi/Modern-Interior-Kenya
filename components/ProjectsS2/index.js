@@ -38,7 +38,7 @@ const ProjectSectionS2 = () => {
                                                         <p className="left-border product-title">{product.title}</p>
                                                         <div className="prices">
                                                             <p className="left-border product-price current-price ">Ksh. {product.price} per m<sup>2</sup> </p>
-                                                            <p className="left-border product-price  prev-price"> was Ksh. {product.prevPrice} per m<sup>2</sup> </p>
+                                                            <p className="left-border product-price  prev-price">Ksh. {product.prevPrice} per m<sup>2</sup> </p>
                                                         </div>
                                                         {/* <p className="left-border product-price">Ksh. {product.price} per m<sup>2</sup> </p> */}
                                                         <div className="wpo-project-text">

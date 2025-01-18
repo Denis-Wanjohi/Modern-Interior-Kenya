@@ -5,6 +5,7 @@
 .wpo-about-area-s3,
 .wpo-about-area-s4,
 .wpo-about-area-s5{
+	background: $black-bg-color;
 	.wpo-about-img{
 		position: relative;
 
@@ -38,7 +39,7 @@
 			padding-top: 30px;
 		}
 		.wpo-about-title{
-			// color: white;
+			color: white;
 			span{
 				display: inline-block;
 				font-size: 18px;
@@ -61,10 +62,11 @@
 
 			h2{
 				font-weight: 700;
-				font-size: 45px;
+				font-size: 50px;
 				line-height: 65px;
 				margin-top: 20px;
 				margin-bottom: 30px;
+				color: #D8D8D8;
 
 				@media(max-width:1200px){
 					font-size: 35px;
@@ -84,9 +86,12 @@
 			font-weight: normal;
 			font-size: 22px;
 			line-height: 32px;
-			color: #4D4C60;
+			color: #a1a1aa;
 			font-weight: 400;
 			margin-bottom: 30px;
+		}
+		p{
+			color: wheat;
 		}
 		.btns{
 			display: flex;
@@ -139,6 +144,7 @@
 .wpo-project-area,
 .wpo-project-area-s2,
 .wpo-project-area-s3{
+	background: $black-bg-color;
 	.container-fluid{
 		padding: 0;
 	}
@@ -271,6 +277,7 @@
 			.product-title{
 				font-size: x-large;
 				font-weight: bolder;
+				color: White;
 			}
 
 			// .product-price{
@@ -405,6 +412,7 @@
 
 .wpo-service-area{
   padding-bottom: 90px;
+  background: $black-bg-color;
 
   @media(max-width:991px){
 	padding-bottom: 80px;
@@ -424,6 +432,7 @@
 
 	.fi{
 		font-size: 60px;
+		color: white;
 	}
 
 	h2{
@@ -431,10 +440,12 @@
 		font-size: 25px;
 		margin-bottom: 20px;
 		margin-top: 5px;
+		color: orange;
 	}
 
 	p{
 		margin-bottom: 20px;
+		color: wheat;
 	}
 
 	a{
@@ -548,7 +559,7 @@
 
 .wpo-team-section{
     padding-bottom: 90px;
-	background: $section-bg-color;
+	background: $black-bg-color;
 
     @media(max-width:991px){
       padding-bottom: 70px;
@@ -626,6 +637,7 @@
                 h3{
                     font-size: 22px;
                     font-weight: 600;
+					color: #ddd;
 
                     a{
                         color: $dark-gray;
@@ -650,7 +662,7 @@
 
 .wpo-testimonial-area{
 	padding-bottom: 120px;
-
+	background: $black-bg-color;
 	@media(max-width:991px){
 		padding-bottom: 80px;
 	}

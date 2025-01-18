@@ -26,7 +26,8 @@ const ServiceSection2 = (props) => {
                                     <Image src={service.sImg} alt=""/>
                                 </div>
                                 <div className="wpo-service-text">
-                                    <h2><Link onClick={ClickHandler} href='/service/[slug]' as={`/service/${service.slug}`}>{service.sTitle}</Link></h2>
+                                {/* <h2><Link onClick={ClickHandler} href='/service/[slug]' as={`/service/${service.slug}`}>{service.sTitle}</Link></h2> */}
+                                <h2>{service.sTitle}</h2>
                                 </div>
                             </div>
                         </div>

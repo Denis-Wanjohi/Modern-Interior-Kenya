@@ -117,9 +117,9 @@ const CartPage = (props) => {
                           Continue Shopping{" "}
                         </Link>
                       </li>
-                      <li>
+                      {/* <li>
                         <button type="submit">Update Cart</button>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                   <div className="cart-product-list">
@@ -141,7 +141,7 @@ const CartPage = (props) => {
                         Delivery Charge<span>$0</span>
                       </li> */}
                       <li className="cart-b">
-                        Total Price<span>${totalPrice(carts)}</span>
+                        Total Price<span>Ksh.{totalPrice(carts)}</span>
                       </li>
                     </ul>
                   </div>

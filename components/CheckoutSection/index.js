@@ -27,6 +27,7 @@ import skrill from '/public/images/icon/skrill.png';
 import paypal from '/public/images/icon/paypal.png';
 
 import CheckWrap from '../CheckWrap'
+import checkout from '../../pages/checkout';
 
 const cardType = [
     {
@@ -56,33 +57,36 @@ const CheckoutSection = ({cartList}) => {
         payment: true
     });
     const [forms, setForms] = React.useState({
-        cupon_key: '',
+        // cupon_key: '',
         fname: '',
         lname: '',
-        country: '',
-        dristrict: '',
-        address: '',
-        post_code: '',
+        location:'',
+        county:'',
+        // county2:'',
+        // country: '',
+        // dristrict: '',
+        // address: '',
+        // post_code: '',
         email: '',
         phone: '',
         note: '',
 
-        payment_method: 'cash',
-        card_type: '',
+        // payment_method: 'cash',
+        // card_type: '',
 
-        fname2: '',
-        lname2: '',
-        country2: '',
-        dristrict2: '',
-        address2: '',
-        post_code2: '',
-        email2: '',
-        phone2: '',
+        // fname2: '',
+        // lname2: '',
+        // country2: '',
+        // dristrict2: '',
+        // address2: '',
+        // post_code2: '',
+        // email2: '',
+        // phone2: '',
 
-        card_holder: '',
-        card_number: '',
-        cvv: '',
-        expire_date: '',
+        // card_holder: '',
+        // card_number: '',
+        // cvv: '',
+        // expire_date: '',
     });
 
     const [dif_ship, setDif_ship] = React.useState(false);
@@ -101,6 +105,10 @@ const CheckoutSection = ({cartList}) => {
         setForms({...forms, [e.target.name]: e.target.value})
     };
 
+    function Checkout(){
+        console.log(forms)
+        // fetch('localhost')
+    }
 
     return (
         <Fragment>
@@ -108,7 +116,7 @@ const CheckoutSection = ({cartList}) => {
                 <Grid className="container" container spacing={3}>
                     <Grid item md={6} xs={12}>
                         <div className="check-form-area">
-                            <Grid className="cuponWrap checkoutCard">
+                            {/* <Grid className="cuponWrap checkoutCard">
                                 <Button className="collapseBtn" fullWidth onClick={() => faqHandler('cupon')}>
                                     Have a coupon ? Click here to enter your code.
                                     <FontAwesome name={tabs.cupon ? 'minus' : 'plus'}/>
@@ -460,7 +468,322 @@ const CheckoutSection = ({cartList}) => {
                                         </Collapse>
                                     </Collapse>
                                 </Grid>
-                            </Grid>
+                            </Grid> */}
+                            <div>
+                                <h2>Checkout Form</h2>
+                                <p>Fill this form with  your contact details to finish up with your order. We will reach out to discuss more.</p>
+                            </div>
+                            <form className="cuponForm" onSubmit={(e)=>{ e.preventDefault();  alert();Checkout()}}>
+                                <Grid container spacing={3}>
+                                    <Grid item sm={6} xs={12}>
+                                        <TextField
+                                            required
+                                            fullWidth
+                                            label="First Name"
+                                            name="fname"
+                                            value={forms.fname}
+                                            onChange={(e) => changeHandler(e)}
+                                            type="text"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            className="formInput radiusNone"
+                                        />
+                                    </Grid>
+                                    <Grid item sm={6} xs={12}>
+                                        <TextField
+                                            required
+                                            fullWidth
+                                            label="Last Name"
+                                            name="lname"
+                                            value={forms.lname}
+                                            onChange={(e) => changeHandler(e)}
+                                            type="text"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            className="formInput radiusNone"
+                                        />
+                                    </Grid>
+                                    <Grid item sm={6} xs={12}>
+                                        <TextField
+                                            required
+                                            fullWidth
+                                            label="Email Adress"
+                                            name="email"
+                                            value={forms.email}
+                                            onChange={(e) => changeHandler(e)}
+                                            type="email"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            className="formInput radiusNone"
+                                        />
+                                    </Grid>
+                                    <Grid item  sm={6} xs={12}>
+                                        <TextField
+                                            required
+                                            fullWidth
+                                            label="Phone No"
+                                            name="phone"
+                                            value={forms.phone}
+                                            onChange={(e) => changeHandler(e)}
+                                            type="text"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            className="formInput radiusNone"
+                                        />
+                                    </Grid>
+
+                                    {/* <Grid item sm={6} xs={12}>
+                                        <InputLabel id="demo-simple-select-filled-label">Age</InputLabel>
+                                        <FormControl className="formSelect" fullWidth variant="filled">
+                                            <Select
+                                                labelId="demo-simple-select-filled-label"
+                                                id="demo-simple-select-filled"
+                                                value={forms.country}
+                                                name="country"
+                                                onChange={(e) => changeHandler(e)}
+                                            >
+                                                <MenuItem value="">
+                                                    <em>None</em>
+                                                </MenuItem>
+                                                <MenuItem value={10}>Ten</MenuItem>
+                                                <MenuItem value={20}>Twenty</MenuItem>
+                                                <MenuItem value={30}>Thirty</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                    </Grid> */}
+                                    <Grid item sm={6} xs={12}>
+                                        <TextField
+                                            required
+                                            fullWidth
+                                            label="County"
+                                            name="county"
+                                            value={forms.county}
+                                            onChange={(e) => changeHandler(e)}
+                                            type="text"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            className="formInput radiusNone"
+                                        />
+                                    </Grid>
+                                    <Grid item sm={6} xs={12}>
+                                        <TextField
+                                            required
+                                            fullWidth
+                                            label="Delivery Location"
+                                            name="location"
+                                            value={forms.location}
+                                            onChange={(e) => changeHandler(e)}
+                                            type="text"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            className="formInput radiusNone"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            fullWidth
+                                            multiline
+                                            label="Order Notes"
+                                            placeholder="Note about your order"
+                                            name="note"
+                                            value={forms.note}
+                                            onChange={(e) => changeHandler(e)}
+                                            type="text"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            className="formInput radiusNone note"
+                                        />
+                                    </Grid>
+                                    {/* <Grid item xs={12}>
+                                        <TextField
+                                            fullWidth
+                                            multiline
+                                            rows="3"
+                                            label="Address"
+                                            name="address"
+                                            value={forms.address}
+                                            onChange={(e) => changeHandler(e)}
+                                            type="text"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            className="formInput radiusNone"
+                                        />
+                                    </Grid> */}
+                                    {/* <Grid item sm={6} xs={12}>
+                                        <TextField
+                                            fullWidth
+                                            label="Post Code"
+                                            name="post_code"
+                                            value={forms.post_code}
+                                            onChange={(e) => changeHandler(e)}
+                                            type="text"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            className="formInput radiusNone"
+                                        />
+                                    </Grid> */}
+
+                                    
+                                    {/* <Grid item xs={12}>
+                                        <FormControlLabel
+                                            className="checkBox"
+                                            control={
+                                                <Checkbox
+                                                    checked={dif_ship}
+                                                    onChange={() => setDif_ship(!dif_ship)}
+                                                    value={dif_ship}
+                                                    color="primary"
+                                                />
+                                            }
+                                            label="Ship to a different address?"
+                                        />
+                                    </Grid> */}
+                                    {/* <Grid item xs={12}>
+                                        <Collapse in={dif_ship} timeout="auto" unmountOnExit>
+                                            <Grid container spacing={3}>
+                                                <Grid item sm={6} xs={12}>
+                                                    <TextField
+                                                        fullWidth
+                                                        label="First Name"
+                                                        name="fname2"
+                                                        value={forms.fname2}
+                                                        onChange={(e) => changeHandler(e)}
+                                                        type="text"
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        className="formInput radiusNone"
+                                                    />
+                                                </Grid>
+                                                <Grid item sm={6} xs={12}>
+                                                    <TextField
+                                                        fullWidth
+                                                        label="Last Name"
+                                                        name="lname2"
+                                                        value={forms.lname2}
+                                                        onChange={(e) => changeHandler(e)}
+                                                        type="text"
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        className="formInput radiusNone"
+                                                    />
+                                                </Grid>
+                                                <Grid item sm={6} xs={12}>
+                                                    <InputLabel
+                                                        id="demo-simple-select-filled-label">Age</InputLabel>
+                                                    <FormControl className="formSelect" fullWidth
+                                                                variant="filled">
+                                                        <Select
+                                                            labelId="demo-simple-select-filled-label"
+                                                            id="demo-simple-select-filled"
+                                                            value={forms.country2}
+                                                            name="country2"
+                                                            onChange={(e) => changeHandler(e)}
+                                                        >
+                                                            <MenuItem value="">
+                                                                <em>None</em>
+                                                            </MenuItem>
+                                                            <MenuItem value={10}>Ten</MenuItem>
+                                                            <MenuItem value={20}>Twenty</MenuItem>
+                                                            <MenuItem value={30}>Thirty</MenuItem>
+                                                        </Select>
+                                                    </FormControl>
+                                                </Grid>
+                                                <Grid item sm={6} xs={12}>
+                                                    <TextField
+                                                        fullWidth
+                                                        label="Dristrict"
+                                                        name="dristrict2"
+                                                        value={forms.dristrict2}
+                                                        onChange={(e) => changeHandler(e)}
+                                                        type="text"
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        className="formInput radiusNone"
+                                                    />
+                                                </Grid>
+                                                <Grid item xs={12}>
+                                                    <TextField
+                                                        fullWidth
+                                                        multiline
+                                                        rows="3"
+                                                        label="Address"
+                                                        name="address2"
+                                                        value={forms.address2}
+                                                        onChange={(e) => changeHandler(e)}
+                                                        type="text"
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        className="formInput radiusNone"
+                                                    />
+                                                </Grid>
+                                                <Grid item sm={6} xs={12}>
+                                                    <TextField
+                                                        fullWidth
+                                                        label="Post Code"
+                                                        name="post_code2"
+                                                        value={forms.post_code2}
+                                                        onChange={(e) => changeHandler(e)}
+                                                        type="text"
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        className="formInput radiusNone"
+                                                    />
+                                                </Grid>
+                                                
+                                                <Grid item xs={12}>
+                                                    <TextField
+                                                        fullWidth
+                                                        label="Phone No"
+                                                        name="phone2"
+                                                        value={forms.phone2}
+                                                        onChange={(e) => changeHandler(e)}
+                                                        type="text"
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        className="formInput radiusNone"
+                                                    />
+                                                </Grid>
+                                            </Grid>
+                                        </Collapse>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            fullWidth
+                                            multiline
+                                            label="Order Notes"
+                                            placeholder="Note about your order"
+                                            name="note"
+                                            value={forms.note}
+                                            onChange={(e) => changeHandler(e)}
+                                            type="text"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            className="formInput radiusNone note"
+                                        />
+                                    </Grid> */}
+                                </Grid>
+                                <Grid className="cardType checkout-button">
+                                    {/* <Link href='/order_received' className="cBtn cBtnLarge cBtnTheme mt-20 ml-15" type="submit">Proceed to Checkout</Link> */}
+                                    <button type='submit'>Proceed to Checkout</button>
+                                    {/* <Button type='submit' onClick={()=>{ Checkout()}}>Proceed to Checkout</Button> */}
+                                </Grid>
+                            </form>
                         </div>
                     </Grid>
                     <Grid item md={6} xs={12}>
@@ -473,9 +796,18 @@ const CheckoutSection = ({cartList}) => {
                                             <TableBody>
                                                 {cartList.map(item => (
                                                     <TableRow key={item.id}>
-                                                        <TableCell>{item.title} ${item.price} x {item.qty}</TableCell>
+                                                        <TableCell>
+                                                            {item.installationFee ?
+                                                                 <span >{item.title} Ksh.{item.price} x {item.qty} <span className='installationFee'>+installation fee (500)</span> </span>
+                                                                : <span>{item.title} Ksh.{item.price} x {item.qty}</span>
+                                                            }
+                                                            
+                                                        </TableCell>
                                                         <TableCell
-                                                            align="right">${item.qty * item.price}</TableCell>
+                                                            align="right">
+                                                            {item.installationFee ? <span>Ksh.{item.qty * item.price + 500}  </span>: <span>Ksh.{item.qty * item.price}</span>}
+                                                            {/* Ksh.{item.qty * item.price} */}
+                                                            </TableCell>
                                                     </TableRow>
                                                 ))}
                                                 <TableRow className="totalProduct">
@@ -484,7 +816,9 @@ const CheckoutSection = ({cartList}) => {
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Sub Price</TableCell>
-                                                    <TableCell align="right">${totalPrice(cartList)}</TableCell>
+                                                    <TableCell align="right">${totalPrice(cartList)} 
+                                                    {/* {cartList.installationFee ? <span className='installationFee'>+installation fee (500)</span>: ""} */}
+                                                    </TableCell>
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Total Price</TableCell>

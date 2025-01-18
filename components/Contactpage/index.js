@@ -56,8 +56,7 @@ const Contactpage = () => {
                         </div>
                         <div className="wpo-contact-title">
                             <h2>Have Any Question?</h2>
-                            <p>It is a long established fact that a reader will be distracted
-                                content of a page when looking.</p>
+                            <p>Please fill with correct information, we will reach out as soon as possiblendex.</p>
                         </div>
                         <div className="wpo-contact-form-area">
                             <ContactForm/>

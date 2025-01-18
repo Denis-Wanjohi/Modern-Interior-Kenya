@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import Link from 'next/link';
 import Projects from '../../api/project'
 import Image from 'next/image'
+import Products from '../../api/products';
 
 const ProjectSection = (props) => {
     var settings = {
@@ -55,16 +56,16 @@ const ProjectSection = (props) => {
                 <div className="row align-items-center">
                     <div className="wpo-project-wrap project-active owl-carousel">
                         <Slider {...settings}>
-                            {Projects.slice(0, 4).map((project, pot) => (
+                            {Products.slice(2, 6).map((product, pot) => (
                                 <div className="wpo-project-item" key={pot}>
                                     <div className="wpo-project-img">
-                                        <Image src={project.pImg} alt="" />
+                                        <Image src={product.mainImg} alt="" />
                                         <div className="left-border"></div>
                                         <div className="right-border"></div>
                                     </div>
                                     <div className="wpo-project-text">
-                                        <h2><Link onClick={ClickHandler} href='/project/[slug]' as={`/project/${project.slug}`}>{project.title}</Link></h2>
-                                        <span>{project.subTitle}</span>
+                                        <h2><Link onClick={ClickHandler} href='/project/[slug]' as={`/project/${product.slug}`}>{product.title}</Link></h2>
+                                        <span>{product.subTitle}</span>
                                     </div>
                                 </div>
                             ))}

@@ -39,12 +39,14 @@
     .current-price{
         font-weight: 900;
         margin-right: 5px ;
+        color: wheat;
     }
     .prev-price{
         font-size: 12px;
         display: flex;
         align-items: baseline;
         margin-left: 10px;
+        text-decoration: line-through;
     }
 }
 .measurements{
