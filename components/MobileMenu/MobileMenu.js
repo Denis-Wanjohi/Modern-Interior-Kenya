@@ -9,33 +9,33 @@ const menus = [
         id: 1,
         title: 'Home',
         link: '/home',
-        submenu: [
-            {
-                id: 11,
-                title: 'Home style 1',
-                link: '/home'
-            },
-            {
-                id: 12,
-                title: 'Home style 2',
-                link: '/home2'
-            },
-            {
-                id: 13,
-                title: 'Home style 3',
-                link: '/home3'
-            },
-            {
-                id: 14,
-                title: 'Home style 4',
-                link: '/home4'
-            },
-            {
-                id: 15,
-                title: 'Home style 5',
-                link: '/home5'
-            },
-        ]
+        // submenu: [
+        //     {
+        //         id: 11,
+        //         title: 'Home style 1',
+        //         link: '/home'
+        //     },
+        //     {
+        //         id: 12,
+        //         title: 'Home style 2',
+        //         link: '/home2'
+        //     },
+        //     {
+        //         id: 13,
+        //         title: 'Home style 3',
+        //         link: '/home3'
+        //     },
+        //     {
+        //         id: 14,
+        //         title: 'Home style 4',
+        //         link: '/home4'
+        //     },
+        //     {
+        //         id: 15,
+        //         title: 'Home style 5',
+        //         link: '/home5'
+        //     },
+        // ]
     },
 
     {
@@ -48,144 +48,107 @@ const menus = [
     id: 3,
         title: 'Services',
         link: '/service',
-        submenu: [
-            {
-                id: 31,
-                title: 'Service',
-                link: '/service'
-            },
-            {
-                id: 32,
-                title: 'Service style 2',
-                link: '/service-s2'
-            },
-            {
-                id: 33,
-                title: 'Service Single',
-                link: '/service/Perfect-Planning'
-            }
-        ]
+        // submenu: [
+        //     {
+        //         id: 31,
+        //         title: 'Service',
+        //         link: '/service'
+        //     },
+        //     {
+        //         id: 32,
+        //         title: 'Service style 2',
+        //         link: '/service-s2'
+        //     },
+        //     {
+        //         id: 33,
+        //         title: 'Service Single',
+        //         link: '/service/Perfect-Planning'
+        //     }
+        // ]
     },
 {
     id: 4,
         title: 'Projects',
         link: '/project',
-        submenu: [
-            {
-                id: 41,
-                title: 'Projects',
-                link: '/project'
-            },
-            {
-                id: 42,
-                title: 'Projects style 2',
-                link: '/project-s2'
-            },
-            {
-                id: 43,
-                title: 'Projects Single',
-                link: '/project/Architecture-Design'
-            }
-        ]
+        // submenu: [
+        //     {
+        //         id: 41,
+        //         title: 'Projects',
+        //         link: '/project'
+        //     },
+        //     {
+        //         id: 42,
+        //         title: 'Projects style 2',
+        //         link: '/project-s2'
+        //     },
+        //     {
+        //         id: 43,
+        //         title: 'Projects Single',
+        //         link: '/project/Architecture-Design'
+        //     }
+        // ]
     },
 
     {
         id: 7,
-        title: 'Pages',
-        link: '/',
-        submenu: [
-            {
-                id: 771,
-                title: 'Shop',
-                link: '/shop'
-            },
-            {
-                id: 772,
-                title: 'Shop Single',
-                link: '/product-single/Black-Timber-Chairs'
-            },
-            {
-                id: 773,
-                title: 'Cart',
-                link: '/cart'
-            },
-            {
-                id: 774,
-                title: 'Checkout',
-                link: '/checkout'
-            },
-            {
-                id: 775,
-                title: 'Team Single',
-                link: '/team-single/William-Watson'
-            },
-            {
-                id: 71,
-                title: 'Pricing',
-                link: '/pricing'
-            },
-            {
-                id: 75,
-                title: 'Testimonial',
-                link: '/testimonial'
-            },
-            {
-                id: 76,
-                title: 'Error 404',
-                link: '/404'
-            },
+        title: 'Shop',
+        link: '/shop',
+        // submenu: [
+        //     {
+        //         id: 771,
+        //         title: 'Shop',
+        //         link: '/shop'
+        //     },
+        //     {
+        //         id: 772,
+        //         title: 'Shop Single',
+        //         link: '/product-single/Black-Timber-Chairs'
+        //     },
+        //     {
+        //         id: 773,
+        //         title: 'Cart',
+        //         link: '/cart'
+        //     },
+        //     {
+        //         id: 774,
+        //         title: 'Checkout',
+        //         link: '/checkout'
+        //     },
+        //     {
+        //         id: 775,
+        //         title: 'Team Single',
+        //         link: '/team-single/William-Watson'
+        //     },
+        //     {
+        //         id: 71,
+        //         title: 'Pricing',
+        //         link: '/pricing'
+        //     },
+        //     {
+        //         id: 75,
+        //         title: 'Testimonial',
+        //         link: '/testimonial'
+        //     },
+        //     {
+        //         id: 76,
+        //         title: 'Error 404',
+        //         link: '/404'
+        //     },
     
-            {
-                id: 77,
-                title: 'Login',
-                link: '/login'
-            },
-            {
-                id: 78,
-                title: 'Register',
-                link: '/register'
-            },
+        //     {
+        //         id: 77,
+        //         title: 'Login',
+        //         link: '/login'
+        //     },
+        //     {
+        //         id: 78,
+        //         title: 'Register',
+        //         link: '/register'
+        //     },
             
-        ]
+        // ]
     },
 
-    {
-        id: 5,
-        title: 'Blog',
-        link: '/blog',
-        submenu: [
-            {
-                id: 51,
-                title: 'Blog',
-                link: '/blog'
-            },
-            {
-                id: 52,
-                title: 'Blog Left sidebar',
-                link: '/blog-left'
-            },
-            {
-                id: 53,
-                title: 'Blog full width',
-                link: '/blog-fullwidth'
-            },
-            {
-                id: 54,
-                title: 'Blog single',
-                link: '/blog-single/Best-Architecture-Design'
-            },
-            {
-                id: 55,
-                title: 'Blog single Left sidebar',
-                link: '/blog-single-left-sidebar/Best-Architecture-Design'
-            },
-            {
-                id: 56,
-                title: 'Blog single Left sidebar',
-                link: '/blog-single-fullwidth/Best-Architecture-Design'
-            },
-        ]
-    },
     {
         id: 88,
         title: 'Contact',

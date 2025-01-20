@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f0f8ff;">
+    <header style="background-color: #3498db; padding: 20px; border-radius: 5px; color: #ffffff;">
+        <div style="text-align: center; padding: 20px 0;">
+            <img src="http://localhost:3000/_next/image?url=%2Fimages%2FModern%20Interior%20Kenya%20Logo.png&w=256&q=75" alt="McLaren Logo" style="width: 150px;">
+        </div>
+        <h1 style="color: #ffffff; margin-bottom: 10px; text-align: center;">Order Confirmation</h1>
+        <div style="margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
+            <strong>Name:</strong> <span style="color: #e8f4fc;">{{user.fname}} {{user.lname}}</span>
+        </div>
+        <div style="margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
+            <strong>Email:</strong> <span style="color: #e8f4fc;">{{user.email}}</span>
+        </div>
+        <div style="margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
+            <strong>Phone:</strong> <span style="color: #e8f4fc;">{{user.phone}}</span>
+        </div>
+        <div style="margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
+            <strong>Location:</strong> <span style="color: #e8f4fc;">{{user.location}}</span>
+        </div>
+        <div style="background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
+            <strong>County:</strong> <span style="color: #e8f4fc;">{{user.county}}</span>
+        </div>
+    </header>
+
+    <main style="margin-top: 20px; background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <h2 style="color: #3498db; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Order Details</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background-color: #3498db; color: #ffffff;">
+                    <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Item</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Quantity</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Installation Fee</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Price</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each cart}}
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #e8f4fc;">{{title}}</td>
+                    <td style="padding: 12px; border: 1px solid #e8f4fc;">{{qty}}</td>
+                    <td style="padding: 12px; border: 1px solid #e8f4fc;">ksh.{{installationFee }}</td>
+                    <td style="padding: 12px; border: 1px solid #e8f4fc;">Ksh. {{price}}</td>
+                    <td style="padding: 12px; border: 1px solid #e8f4fc;">Ksh. {{total}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+                <tr style="background-color: #f9f9f9;">
+                    <td colspan="4" style="padding: 12px; border: 1px solid #e8f4fc; text-align: right;"><strong>Total:</strong></td>
+                    <td style="padding: 12px; border: 1px solid #e8f4fc; color: #e67e22;"><strong>${{total}}</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div style="font-family: 'Comic Sans MS'; margin-top: 20px; text-align: center; font-size: 0.9em; color: #666; background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+            <p style="font-weight: 900;">User Order note:</p>
+            <p>{{user.note}}</p>
+        </div>
+    </main>
+
+    <footer style="margin-top: 20px; text-align: center; font-size: 0.9em; color: #666; background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <p>Thank you for your order! If you have any questions, please contact our customer support.</p>
+        <p><a href="{{support_link}}" style="color: #3498db; text-decoration: none; font-weight: bold;">Customer Support</a></p>
+    </footer>
+</body>
+</html>

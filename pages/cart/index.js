@@ -37,7 +37,7 @@ const CartPage = (props) => {
                         <tr>
                           <th className="images images-b">Image</th>
                           <th className="product-2">Product Name</th>
-                          <th className="pr">Quantity</th>
+                          <th className="pr">Quantity(Rolls)</th>
                           <th className="ptice">Price</th>
                           <th className="installation">Installation</th>
                           <th className="stock">Total Price</th>
@@ -87,8 +87,8 @@ const CartPage = (props) => {
                                 </div>
                               </td>
                               <td className="ptice">${catItem.price}</td>
-                              <td className="install">Ksh.{catItem.installationFee? 500  : 0}</td>
-                              <td className="stock">${catItem.installationFee ? catItem.qty * catItem.price + 500 : catItem.qty * catItem.price}</td>
+                              <td className="install">Ksh.{catItem.installationFee? 500 * catItem.qty  : 0}</td>
+                              <td className="stock">${catItem.installationFee ? (catItem.qty * catItem.price) + (500 * catItem.qty) : catItem.qty * catItem.price}</td>
                               <td className="action">
                                 <ul>
                                   <li

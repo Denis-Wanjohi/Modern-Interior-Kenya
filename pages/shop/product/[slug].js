@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { useRouter } from 'next/router'
+import React, { Fragment, useState } from 'react';
+import { Router, useRouter } from 'next/router'
 import Services from '../../../api/service'
 import ServiceSidebar from './sidebar';
 // import PageTitle from '../../components/pagetitle/PageTitle';
@@ -21,18 +21,24 @@ import Products from '../../../api/products';
 
 
 const SeviceSinglePage = (props) => {
+    const [isReady,setIsReady] = useState(false)
     const router = useRouter()
-
     const selectedProduct = Products.find(item => item.slug === useRouter().asPath.replace('/shop/product/',''))
-    
+    // const selectedProduct = Products.find(item => item.slug === 'marble-white-gold')
+    setTimeout(()=>{
+        setIsReady(true)
+    },2000)
     const addToCartProduct = (product, qty, installationFee) => {
         props.addToCart(product,qty,installationFee)
     };
     return (
         <Fragment>
+            
             <Navbar2 Logo={Logo} hclass={'wpo-header-style-2'} />
             {/* <PageTitle pageTitle={serviceDetails?.sTitle} pagesub={serviceDetails?.sTitle} /> */}
-            <div className="wpo-service-single-area section-padding">
+            {
+                isReady ?
+                <div className="wpo-service-single-area section-padding">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 col-12">
@@ -120,6 +126,9 @@ const SeviceSinglePage = (props) => {
                     </div>
                 </div>
             </div>
+                :
+                <div>Loading . . . </div>
+            }
             <Footer />
             <Scrollbar />
         </Fragment>

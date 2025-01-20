@@ -62,9 +62,8 @@ const Footer = (props) => {
                                     <ul>
                                         <li><i className="fi flaticon-location"></i>68D, Belsion Town 2365 <br /> Fna city, LH
                                             3656, USA</li>
-                                        <li><i className="fi flaticon-telephone"></i>+ 8 (123) 123 456 789 <br />
-                                            + 8 (123) 123 456 789</li>
-                                        <li><i className="fi flaticon-email"></i>arkio@gmail.com</li>
+                                        <li><i className="fi flaticon-telephone"></i>+254768269926</li>
+                                        <li><i className="fi flaticon-email"></i>moderninteriorkenya@gmail.com</li>
                                     </ul>
                                 </div>
                             </div>

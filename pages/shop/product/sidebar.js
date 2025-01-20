@@ -79,7 +79,7 @@ const ServiceSidebar = ({addToCart,product}) => {
             setFinalPrice(totalPrice)
         }else{
             setInstallatonFee(true)
-            let total = totalPrice + 500
+            let total = totalPrice + (500 * rolls)
             setFinalPrice(total)
         }
     }
@@ -166,17 +166,27 @@ const ServiceSidebar = ({addToCart,product}) => {
                         </div>
                     </div>
                     <div>
-                        <div className='flex-box'>
-                            <div className='installation-fee'>
-                                <p>Installation service fee: </p>  
-                                <h6> Ksh.500</h6>
+                        <div className='installation-fee-section'>
+                            <div className='flex-box'>
+                                <div className='installation-fee'>
+                                    <p>Installation fee <span>(per roll)</span>: </p>  
+                                    <h6> Ksh.500</h6>
+                                </div>
+                                {
+                                    installationFee ?
+                                    <input type='checkbox' checked onClick={()=>{checkInstallationFee()}}></input>:
+                                    <input type='checkbox'onClick={()=>{checkInstallationFee()}}></input>
+                                }
+                                
                             </div>
                             {
                                 installationFee ?
-                                <input type='checkbox' checked onClick={()=>{checkInstallationFee()}}></input>:
-                                <input type='checkbox'onClick={()=>{checkInstallationFee()}}></input>
+                                <div className='installation-total'>
+                                    <h6>Installation:</h6>
+                                    <p>Ksh.500 *  {rolls != null ? rolls : 0}  rolls = Ksh.{500*rolls}</p>
+                                </div>
+                                : ''
                             }
-                            
                         </div>
                         
                         {

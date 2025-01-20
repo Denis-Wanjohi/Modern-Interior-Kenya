@@ -28,6 +28,7 @@ import paypal from '/public/images/icon/paypal.png';
 
 import CheckWrap from '../CheckWrap'
 import checkout from '../../pages/checkout';
+import axios from 'axios';
 
 const cardType = [
     {
@@ -106,8 +107,12 @@ const CheckoutSection = ({cartList}) => {
     };
 
     function Checkout(){
-        console.log(forms)
-        // fetch('localhost')
+        console.log(cartList)
+        let data = {
+            'user':forms,
+            'cart':cartList
+        }
+        axios.post('http://localhost:3001/api/order',data)
     }
 
     return (
@@ -473,7 +478,7 @@ const CheckoutSection = ({cartList}) => {
                                 <h2>Checkout Form</h2>
                                 <p>Fill this form with  your contact details to finish up with your order. We will reach out to discuss more.</p>
                             </div>
-                            <form className="cuponForm" onSubmit={(e)=>{ e.preventDefault();  alert();Checkout()}}>
+                            <form className="cuponForm" onSubmit={(e)=>{ e.preventDefault();Checkout()}}>
                                 <Grid container spacing={3}>
                                     <Grid item sm={6} xs={12}>
                                         <TextField
@@ -798,14 +803,14 @@ const CheckoutSection = ({cartList}) => {
                                                     <TableRow key={item.id}>
                                                         <TableCell>
                                                             {item.installationFee ?
-                                                                 <span >{item.title} Ksh.{item.price} x {item.qty} <span className='installationFee'>+installation fee (500)</span> </span>
+                                                                 <span >{item.title} Ksh.{item.price} x {item.qty} <span className='installationFee'>+installation fee</span> </span>
                                                                 : <span>{item.title} Ksh.{item.price} x {item.qty}</span>
                                                             }
                                                             
                                                         </TableCell>
                                                         <TableCell
                                                             align="right">
-                                                            {item.installationFee ? <span>Ksh.{item.qty * item.price + 500}  </span>: <span>Ksh.{item.qty * item.price}</span>}
+                                                            {item.installationFee ? <span>Ksh.{(item.qty * item.price) + (500 * item.qty)}  </span>: <span>Ksh.{item.qty * item.price}</span>}
                                                             {/* Ksh.{item.qty * item.price} */}
                                                             </TableCell>
                                                     </TableRow>
