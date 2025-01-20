@@ -26,6 +26,8 @@ import vinyl8 from '/public/images/Sample collection/Vinyl/sample8.jpg'
 import vinyl10 from '/public/images/Sample collection/Vinyl/sample10.jpg'
 // import vinyl11 from '/public/images/Sample collection/Vinyl/sample11.jpg'
 
+import kitchen1 from '/public/images/Sample collection/Contact Paper/collection.jpg'
+
 const Products  = [
     {
         id:1,
@@ -131,9 +133,25 @@ const Products  = [
         Img3:vinyl7,
         Img4:vinyl8,
         installationFee:false
+    },
+    {
+        id:8,
+        title:'Removable kitchen counter marble contact paper PVC self-adhesive waterproof marble wall paper stickerRemovable kitchen counter marble contact paper PVC self-adhesive waterproof marble wall paper sticker',
+        slug:'Removable-kitchen-counter-marble-contact-paper-PVC-self-adhesive-waterproof-marble-wall-paper-sticker',
+        price:1600,
+        prevPrice:1790,
+        width:4,
+        height:1,
+        mainImg:kitchen1,
+        Img1:marbleLightGrey,
+        Img2:marblePlainWhite,
+        Img3:marbleBlack,
+        Img4:marbleAllColors,
+        installationFee:false
     }
-
 ]
+
+
 
 
 export default Products;
