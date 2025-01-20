@@ -136,7 +136,7 @@ const Products  = [
     },
     {
         id:8,
-        title:'Removable kitchen counter marble contact paper PVC self-adhesive waterproof marble wall paper stickerRemovable kitchen counter marble contact paper PVC self-adhesive waterproof marble wall paper sticker',
+        title:'Removable kitchen counter marble contact paper PVC self-adhesive waterproof marble wall paper sticker',
         slug:'Removable-kitchen-counter-marble-contact-paper-PVC-self-adhesive-waterproof-marble-wall-paper-sticker',
         price:1600,
         prevPrice:1790,
