@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 const corsOptions = {
   credentials: true,
-  origin: ['http://localhost:3000'] // Whitelist the domains you want to allow
+  origin: ['http://localhost:3000','https://modern-interior-kenya.vercel.app'] // Whitelist the domains you want to allow
 };
 
 app.use(cors(corsOptions)); // Use the cors middleware with your options
@@ -39,7 +39,7 @@ app.get('/one',(req,res)=>{
 app.post('/api/order', (req, res) => {
   const { user, cart } = req.body;
   const htmlTemplate = fs.readFileSync('./order.html', 'utf-8');
-  
+  sendEmail(cart,user)
   // Compile the Handlebars template
   const template = handlebars.compile(htmlTemplate);
   let total = 0
