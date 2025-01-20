@@ -16,6 +16,15 @@ import wpcDark1  from '/public/images/Sample collection/Rough Surfaces/sample6.j
 import wpcDark2  from '/public/images/Sample collection/Rough Surfaces/sample9.jpg'
 import wpcDark3  from '/public/images/Sample collection/Rough Surfaces/sample3.jpg'
 
+import vinyl1 from '/public/images/Sample collection/Vinyl/sample1'
+import vinyl4 from '/public/images/Sample collection/Vinyl/sample4'
+import vinyl5 from '/public/images/Sample collection/Vinyl/sample5'
+import vinyl6 from '/public/images/Sample collection/Vinyl/sample6'
+import vinyl7 from '/public/images/Sample collection/Vinyl/sample7'
+import vinyl8 from '/public/images/Sample collection/Vinyl/sample8'
+import vinyl9 from '/public/images/Sample collection/Vinyl/sample9'
+import vinyl10 from '/public/images/Sample collection/Vinyl/sample10'
+// import vinyl11 from '/public/images/Sample collection/Vinyl/sample11'
 
 const Products  = [
     {
@@ -106,6 +115,21 @@ const Products  = [
         Img2:wpcDark2,
         Img3:wpcDark3,
         // Img4:marbleWhite4,
+        installationFee:false
+    },
+    {
+        id:7,
+        title:'PVC 45cm Waterproof Wooden stripes Self Adhesive Wallpaper wall stickers for Room Wall & Furniture decoration',
+        slug:'PVC-45cm-Waterproof-Wooden-stripes-Self-Adhesive-Wallpaper-wall-stickers-for-Room-Wall-&-Furniture-decoration',
+        price:1600,
+        prevPrice:1890,
+        width:4,
+        height:1,
+        mainImg:vinyl10,
+        Img1:vinyl4,
+        Img2:vinyl5,
+        Img3:vinyl7,
+        Img4:vinyl8,
         installationFee:false
     }
 

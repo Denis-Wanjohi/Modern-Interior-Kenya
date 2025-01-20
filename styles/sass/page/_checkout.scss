@@ -498,6 +498,24 @@ body .container {
     padding-left: 35px;
     padding-right: 35px;
   }
+  div{
+    font-weight: bolder;
+    cursor: pointer;
+    background-color: rgb(46, 218, 46);
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  p{
+    text-align: center;
+    font-weight: bolder;
+    color: green;
+    
+  }
 }
 .installationFee{
   background: rgb(79, 206, 85);

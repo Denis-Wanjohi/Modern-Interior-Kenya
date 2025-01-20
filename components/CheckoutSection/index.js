@@ -29,6 +29,7 @@ import paypal from '/public/images/icon/paypal.png';
 import CheckWrap from '../CheckWrap'
 import checkout from '../../pages/checkout';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 const cardType = [
     {
@@ -57,6 +58,8 @@ const CheckoutSection = ({cartList}) => {
         billing_adress: false,
         payment: true
     });
+    const [isSendingEmail,setSendingEmail] = React.useState(false)
+    const [emailSent,setEmailSent] = React.useState(false)
     const [forms, setForms] = React.useState({
         // cupon_key: '',
         fname: '',
@@ -107,13 +110,31 @@ const CheckoutSection = ({cartList}) => {
     };
 
     function Checkout(){
+        setSendingEmail(true)
         let data = {
             'user':forms,
             'cart':cartList
         }
         axios.post('http://localhost:3001/api/order',data)
         .then((res)=>{
-            console.log(res.data)
+            if(res.data.message == 'Email sent successfully to the office'){
+                alert('sent')
+                setForms({
+                    fname :'',
+                    lname :'',
+                    email :'',
+                    location :'',
+                    county :'',
+                    note :'',
+                    phone :'',
+                })
+                setSendingEmail(false)
+                setEmailSent(true)
+                setTimeout(()=>{
+                    setEmailSent(false)
+                    
+                },5000)
+            }
         }).catch(err=>{
             console.error(err)
         })
@@ -789,7 +810,14 @@ const CheckoutSection = ({cartList}) => {
                                 </Grid>
                                 <Grid className="cardType checkout-button">
                                     {/* <Link href='/order_received' className="cBtn cBtnLarge cBtnTheme mt-20 ml-15" type="submit">Proceed to Checkout</Link> */}
-                                    <button type='submit'>Proceed to Checkout</button>
+                                    
+                                    {
+                                        emailSent ? 
+                                        <p>Email sent! 👍</p>
+                                        :isSendingEmail ?
+                                        <div>Sending email . . .</div>
+                                        : <button type='submit'>Submit</button>
+                                    }
                                     {/* <Button type='submit' onClick={()=>{ Checkout()}}>Proceed to Checkout</Button> */}
                                 </Grid>
                             </form>
@@ -846,6 +874,10 @@ const CheckoutSection = ({cartList}) => {
         </Fragment>
     )
 };
-
+// const mapStateToProps = (state) => {
+//     return {
+//         carts: state.cartList.cart,
+//     };
+// };
 
 export default CheckoutSection;

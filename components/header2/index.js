@@ -16,7 +16,21 @@ const Header2 = (props) => {
     const ClickHandler = () => {
         window.scrollTo(10, 0);
     }
+    
+    const test = ()=>{
+        // console.log(props.car)
+        props.carts.forEach(element => {
+            console.log(element)
 
+            
+        });
+        setTimeout(()=>{
+            props.removeFromCart(1)
+        },5000)
+        
+    }
+    // test()
+    
     const SubmitHandler = (e) => {
         e.preventDefault()
     }
