@@ -16,15 +16,15 @@ import wpcDark1  from '/public/images/Sample collection/Rough Surfaces/sample6.j
 import wpcDark2  from '/public/images/Sample collection/Rough Surfaces/sample9.jpg'
 import wpcDark3  from '/public/images/Sample collection/Rough Surfaces/sample3.jpg'
 
-import vinyl1 from '/public/images/Sample collection/Vinyl/sample1'
-import vinyl4 from '/public/images/Sample collection/Vinyl/sample4'
-import vinyl5 from '/public/images/Sample collection/Vinyl/sample5'
-import vinyl6 from '/public/images/Sample collection/Vinyl/sample6'
-import vinyl7 from '/public/images/Sample collection/Vinyl/sample7'
-import vinyl8 from '/public/images/Sample collection/Vinyl/sample8'
-import vinyl9 from '/public/images/Sample collection/Vinyl/sample9'
-import vinyl10 from '/public/images/Sample collection/Vinyl/sample10'
-// import vinyl11 from '/public/images/Sample collection/Vinyl/sample11'
+import vinyl1 from '/public/images/Sample collection/Vinyl/sample1.jpg'
+import vinyl4 from '/public/images/Sample collection/Vinyl/sample4.jpg'
+import vinyl5 from '/public/images/Sample collection/Vinyl/sample5.jpg'
+// import vinyl6 from '/public/images/Sample collection/Vinyl/sample6.jpg'
+import vinyl7 from '/public/images/Sample collection/Vinyl/sample7.jpg'
+import vinyl8 from '/public/images/Sample collection/Vinyl/sample8.jpg'
+// import vinyl9 from '/public/images/Sample collection/Vinyl/sample9.jpg'
+import vinyl10 from '/public/images/Sample collection/Vinyl/sample10.jpg'
+// import vinyl11 from '/public/images/Sample collection/Vinyl/sample11.jpg'
 
 const Products  = [
     {
