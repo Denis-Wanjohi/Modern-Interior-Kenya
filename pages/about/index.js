@@ -3,6 +3,9 @@ import React, {Fragment} from 'react';
 import Navbar from '../../components/Navbar2/Navbar2';
 import PageTitle from '../../components/pagetitle/PageTitle'
 import About from '../../components/about/about'
+import About2 from '../../components/about2/index'
+import About3 from '../../components/about3/index'
+import About4 from '../../components/about4/index'
 import ProjectSection from '../../components/Projects';
 import ServiceSection from '../../components/Services';
 import Pricing from '../../components/Pricing'
@@ -24,11 +27,14 @@ const AboutPage =() => {
             <Navbar Logo={Logo} hclass={'wpo-header-style-2'}/>
             <PageTitle pageTitle={'About Us'} pagesub={'About'}/> 
             <About abimg={abimg}/>
+            <About2></About2>
+            {/* <About3></About3> */}
+            <About4></About4>
             <ProjectSection/>
             <ServiceSection/>
             <FunFact fnClass={'wpo-fun-fact-section-s2'}/>
             {/* <Pricing/> */}
-            <TeamSection/>
+            {/* <TeamSection/> */}
             <Testimonial/>
             <Footer ftClass={'wpo-site-footer-s2'}/>
             <Scrollbar/>

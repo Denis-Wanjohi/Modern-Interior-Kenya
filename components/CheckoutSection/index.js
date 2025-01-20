@@ -107,12 +107,16 @@ const CheckoutSection = ({cartList}) => {
     };
 
     function Checkout(){
-        console.log(cartList)
         let data = {
             'user':forms,
             'cart':cartList
         }
         axios.post('http://localhost:3001/api/order',data)
+        .then((res)=>{
+            console.log(res.data)
+        }).catch(err=>{
+            console.error(err)
+        })
     }
 
     return (

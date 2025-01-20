@@ -1,8 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import VideoModal from '../../components/ModalVideo/VideoModal'
-import abimg from '/public/images/about5.jpg'
-import abimg2 from '/public/images/about-shape3.png'
+import abimg from '/public/images/Sample collection/Collections.jpg'
 import Image from 'next/image'
 
 
@@ -18,13 +17,6 @@ const About4 = (props) => {
                     <div className="col-lg-6 col-md-12 col-sm-12">
                         <div className="wpo-about-img">
                             <Image src={abimg} alt="" />
-                            <div className="wpo-about-img-text">
-                                <h2>25+</h2>
-                                <p>Years of Experience</p>
-                                <div className="about-shape">
-                                    <Image src={abimg2} alt="" />
-                                </div>
-                            </div>
                             <div className="left-shape">
                                 <div className="square-shape"></div>
                                 <div className="shape-top">
@@ -45,21 +37,17 @@ const About4 = (props) => {
                     <div className="col-xl-6 col-lg-6 col-md-12 colsm-12">
                         <div className="wpo-about-text">
                             <div className="wpo-about-title">
-                                <span>About Us</span>
-                                <h2>We Offer You Profesional Interior Design</h2>
+                                
+                                <h2>Why choose us</h2>
+                                <span>We have the latest and affordable wallpaper design in the country.</span>
                             </div>
-                            <h5>Over 25 years Liarch helping investors building their drea & business goals go to the perfection</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac enim aliquam feugiat ullamcorper. Id risus mattis neque, ullamcorper. Sed sit commodo vestibulum cras in cras. Nec proin scelerisque quis nisl vitae, egestas non. Fringilla auctor.</p>
+                            <ul className="ab-list">
+                                <li> A solid-colored wallpaper with a slight sheen, for example, can introduce drama and create a sense of dimension by reflecting light and adding texture to the environment.</li>
+                                <li>Wallpapers are a versatile and powerful way to personalize your decor, offering endless possibilities—from vibrant hues and intricate patterns to minimalist designs and various textures.</li>
+                                <li> Whether you prefer something bold or subtle, geometric or floral, there's a wallpaper style to suit every taste and elevate any room.</li>
+                            </ul>
                             <div className="btns">
-                                <Link href="/about" onClick={ClickHandler} className="theme-btn">Discover More</Link>
-                                <ul>
-                                    <li className="video-holder">
-                                        <VideoModal />
-                                    </li>
-                                    <li className="video-text">
-                                        Watch Our Video
-                                    </li>
-                                </ul>
+                                <Link href="/show" onClick={ClickHandler} className="theme-btn">Discover More</Link>
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,10 @@ const About = (props) => {
                                 <h2>We Offer You Profesional Interior Design</h2>
                             </div>
                             <h5>Over 5 years  colaborating with investors, building their conceptials ideas & business goals go to the perfection</h5>
-                            <p>Here at Modern Interior Kenya we not only focus on making your gaol come true but also involve ourselves in making sure you get the best professional advice, quality product and services from your budget.</p>
+                            {/* <p>Here at Modern Interior Kenya we not only focus on making your gaol come true but also involve ourselves in making sure you get the best professional advice, quality product and services from your budget.</p> */}
+                            <p>
+                            We are dedicated to transforming spaces into both practical and visually appealing environments. Our services encompass a broad spectrum of interior design solutions, tailored to meet the needs of both residential and commercial clients.
+                            </p>
                             <div className="btns">
                                 <Link href="/shop" onClick={ClickHandler} className="theme-btn" >Discover More</Link>
                                 {/* <ul>

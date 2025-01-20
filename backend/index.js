@@ -46,8 +46,8 @@ app.post('/api/order', (req, res) => {
   cart.forEach(element => {
     total += (element.price * element.qty)
     if(element.installationFee){
-      total += 500
-      element.installationFee = 500
+      total += (500 * element.qty)
+      element.installationFee = (500 * element.qty)
       element.total = (element.price * element.qty) + element.installationFee
     }else{
       element.installationFee = 0
@@ -85,14 +85,14 @@ app.post('/api/order', (req, res) => {
 
 //email to client
 async function sendEmail(cart,user) {
-  // Read the HTML template and image file
+  const htmlTemplate = fs.readFileSync('./confirm.html', 'utf-8');
   const template = handlebars.compile(htmlTemplate);
   let total = 0
   cart.forEach(element => {
     total += (element.price * element.qty)
     if(element.installationFee){
-      total += 500
-      element.installationFee = 500
+      total += (500 * element.qty)
+      element.installationFee = (500 * element.qty)
       element.total = (element.price * element.qty) + element.installationFee
     }else{
       element.installationFee = 0
