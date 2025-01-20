@@ -58,7 +58,7 @@ app.post('/api/order', (req, res) => {
   const html = template({ user,cart,total,year });
   const mailOptions = {
     from: "Modern Interior Kenya <sender@gmail.com>",
-    to: "deniswanjohi15@gmail.com",
+    to: "moderninteriorkenya@gmail.com",
     subject: `MODERN INTERIOR KENYA` ,
     html:html,
   };

@@ -853,14 +853,14 @@ const CheckoutSection = ({cartList}) => {
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Sub Price</TableCell>
-                                                    <TableCell align="right">${totalPrice(cartList)} 
+                                                    <TableCell align="right">Ksh.{totalPrice(cartList)} 
                                                     {/* {cartList.installationFee ? <span className='installationFee'>+installation fee (500)</span>: ""} */}
                                                     </TableCell>
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Total Price</TableCell>
                                                     <TableCell
-                                                        align="right">${totalPrice(cartList)}</TableCell>
+                                                        align="right">Ksh.{totalPrice(cartList)}</TableCell>
                                                 </TableRow>
                                             </TableBody>
                                         </Table>
