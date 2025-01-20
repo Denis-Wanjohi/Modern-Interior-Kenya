@@ -115,7 +115,7 @@ const CheckoutSection = ({cartList}) => {
             'user':forms,
             'cart':cartList
         }
-        axios.post('http://localhost:3001/api/order',data)
+        axios.post(' https://4e2f-102-219-209-193.ngrok-free.app/api/order',data)
         .then((res)=>{
             if(res.data.message == 'Email sent successfully to the office'){
                 alert('sent')
