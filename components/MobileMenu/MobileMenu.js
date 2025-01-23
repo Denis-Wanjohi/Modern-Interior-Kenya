@@ -90,7 +90,7 @@ const menus = [
     },
 
     {
-        id: 7,
+        id: 5,
         title: 'Shop',
         link: '/shop',
         // submenu: [
@@ -150,9 +150,15 @@ const menus = [
     },
 
     {
-        id: 88,
+        id: 6,
         title: 'Contact',
         link: '/contact',
+    },
+
+    {
+        id:7,
+        title:'Cart',
+        link:'/cart'
     }
     
     

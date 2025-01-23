@@ -27,6 +27,14 @@ import vinyl10 from '/public/images/Sample collection/Vinyl/sample10.jpg'
 // import vinyl11 from '/public/images/Sample collection/Vinyl/sample11.jpg'
 
 import kitchen1 from '/public/images/Sample collection/Contact Paper/collection.jpg'
+import contactPaper_1 from '/public/images/Sample collection/Contact Paper/contactPaper_1.jpg'
+import contactPaper_2 from '/public/images/Sample collection/Contact Paper/contactPaper_2.jpg'
+import contactPaper_3 from '/public/images/Sample collection/Contact Paper/contactPaper_3.jpg'
+import contactPaper_4 from '/public/images/Sample collection/Contact Paper/contactPaper_4.jpg'
+import brick_patterns from '/public/images/Sample collection/Brick/brick_patterns'
+import brick_sample1 from '/public/images/Sample collection/Brick/brick_sample1'
+import brick_sample2 from '/public/images/Sample collection/Brick/brick_sample2'
+
 
 const Products  = [
     {
@@ -147,6 +155,36 @@ const Products  = [
         Img2:marblePlainWhite,
         Img3:marbleBlack,
         Img4:marbleAllColors,
+        installationFee:false
+    },
+    {
+        id:9,
+        title: 'Contact paper PVC self-adhesive waterproof marble wall paper sticker',
+        slug:'contact-paper-PVC-self-adhesive-waterproof-marble-wall-paper-sticker',
+        price:1700,
+        prevPrice:2000,
+        width:4,
+        height:1,
+        mainImg:contactPaper_4,
+        Img1:kitchen1,
+        Img2:contactPaper_3,
+        Img3:contactPaper_1,
+        Img4:contactPaper_4,
+        installationFee:false
+    },
+    {
+        id:10,
+        title: '70*77cm Peel And Stick Wall Sticker Self Adhesive Brick Pattern Wallpaper',
+        slug:'70*77cm-Peel-and-Stick-Wall-Sticker-Self-Adhesive-Brick-Pattern-Wallpaper',
+        price:500,
+        prevPrice:650,
+        width:0.7,
+        height:0.77,
+        mainImg:brick_patterns,
+        Img1:brick_patterns,
+        Img2:brick_sample1,
+        Img3:brick_sample2,
+        // Img4:contactPaper_4,
         installationFee:false
     }
 ]
