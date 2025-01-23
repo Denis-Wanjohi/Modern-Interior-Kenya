@@ -31,9 +31,9 @@ import contactPaper_1 from '/public/images/Sample collection/Contact Paper/conta
 import contactPaper_2 from '/public/images/Sample collection/Contact Paper/contactPaper_2.jpg'
 import contactPaper_3 from '/public/images/Sample collection/Contact Paper/contactPaper_3.jpg'
 import contactPaper_4 from '/public/images/Sample collection/Contact Paper/contactPaper_4.jpg'
-import brick_patterns from '/public/images/Sample collection/Brick/brick_patterns'
-import brick_sample1 from '/public/images/Sample collection/Brick/brick_sample1'
-import brick_sample2 from '/public/images/Sample collection/Brick/brick_sample2'
+import brick_patterns from '/public/images/Sample collection/Brick/brick_patterns.jpg'
+import brick_sample1 from '/public/images/Sample collection/Brick/brick_sample1.jpg'
+import brick_sample2 from '/public/images/Sample collection/Brick/brick_sample2.jpg'
 
 
 const Products  = [
