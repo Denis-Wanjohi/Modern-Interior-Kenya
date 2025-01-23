@@ -13,7 +13,7 @@ import { addToCart } from '../../../store/actions/action';
 
 const ServiceSidebar = ({addToCart,product}) => {
     const [height,setHeight] = useState('')
-    const [width,setWidth] = useState('')
+    const [length,setLength] = useState('')
     const [total,setTotal] = useState(0)
     const [rolls,setRolls] = useState(0)
     const [totalPrice,setTotalPrice] = useState(0)
@@ -40,16 +40,16 @@ const ServiceSidebar = ({addToCart,product}) => {
             value = event.target.value
         }
         setInstallatonFee(false)
-        calculate(value,width)
+        calculate(value,length)
         
     }
-    const WidthChange = (event)=>{
+    const LengthChange = (event)=>{
         let value = 0
         if(event.target.value < 0){
-            setWidth(0)
+            setLength(0)
             value = 0
         }else{
-            setWidth(event.target.value)
+            setLength(event.target.value)
             value = event.target.value
         }
         setInstallatonFee(false)
@@ -84,6 +84,16 @@ const ServiceSidebar = ({addToCart,product}) => {
         }
     }
 
+    const clearAll = ()=>{
+        setLength(0)
+        setHeight(0)
+        setTotal(0)
+        setRolls(0)
+        setTotalPrice(0)
+        setFinalPrice(0)
+        setInstallatonFee(false)
+    }
+
     return (
         <div className="col-lg-4 col-12">
             <div className="blog-sidebar">
@@ -96,7 +106,7 @@ const ServiceSidebar = ({addToCart,product}) => {
                     </form>
                 </div> */}
                 <div className="widget category-widget">
-                    <h2>Calculator</h2>
+                    <h2>{product.title}</h2>
                     <div className="flex-box">
                         <h6>
                             <span>Price:</span>Ksh. {product.price}
@@ -120,9 +130,9 @@ const ServiceSidebar = ({addToCart,product}) => {
                                 <p>*</p>
                             </div>
                             <div>
-                                <p>Width</p>
+                                <p>Length</p>
                                 <div  className='flex-box'>
-                                    <input type="number" onChange={WidthChange} value={width}></input>
+                                    <input type="number" onChange={LengthChange} value={length}></input>
                                     <p>m</p>
                                 </div>
                             </div>
@@ -203,6 +213,7 @@ const ServiceSidebar = ({addToCart,product}) => {
                                         addToCart(
                                             product,rolls
                                         )
+                                        clearAll()
                                     }
                                 }
                                 >Add To Cart</button>

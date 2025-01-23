@@ -1,5 +1,6 @@
 import {
   ADD_TO_CART,
+  CLEAR_CART,
   DECREMENT_QUANTITY,
   INCREMENT_QUANTITY,
   REMOVE_FROM_CART,
@@ -88,7 +89,10 @@ export const cartReducer = (state = init, action) => {
       }, []);
 
       return { ...state, cart: decCart };
-
+    
+    case CLEAR_CART:
+      state.cart = []
+      return {...state}
     default:
       return state;
   }

@@ -48,7 +48,7 @@ const Footer = (props) => {
                                 </div>
                                 <ul>
                                     {Services.slice(0, 5).map((service, srv) => (
-                                        <li key={srv}><Link onClick={ClickHandler} href='/service/[slug]' as={`/service/${service.slug}`}>{service.sTitle}</Link></li>
+                                        <li key={srv}>{service.sTitle}</li>
                                     ))}
                                 </ul>
                             </div>

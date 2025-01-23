@@ -6,6 +6,7 @@ import {
   REMOVE_FROM_WISHLIST,
   REMOVE_FROM_COMPARE_LIST,
   ADD_TO_COMPARE,
+  CLEAR_CART,
 } from "./type";
 
 export const fetchProductsBegin = () => ({
@@ -34,6 +35,13 @@ export const removeFromCart = (product_id) => (dispatch) => {
   dispatch({
     type: types.REMOVE_FROM_CART,
     product_id,
+  });
+};
+
+export const clearCart = () => (dispatch) => {
+  toast.success("Cart Cleared");
+  dispatch({
+    type: types.CLEAR_CART,
   });
 };
 

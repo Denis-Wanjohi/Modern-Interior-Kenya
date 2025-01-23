@@ -86,9 +86,9 @@ const CartPage = (props) => {
                                   </Grid>
                                 </div>
                               </td>
-                              <td className="ptice">${catItem.price}</td>
+                              <td className="ptice">Ksh.{catItem.price}</td>
                               <td className="install">Ksh.{catItem.installationFee? 500 * catItem.qty  : 0}</td>
-                              <td className="stock">${catItem.installationFee ? (catItem.qty * catItem.price) + (500 * catItem.qty) : catItem.qty * catItem.price}</td>
+                              <td className="stock">Ksh.{catItem.installationFee ? (catItem.qty * catItem.price) + (500 * catItem.qty) : catItem.qty * catItem.price}</td>
                               <td className="action">
                                 <ul>
                                   <li

@@ -34,7 +34,7 @@ const Header2 = (props) => {
     const SubmitHandler = (e) => {
         e.preventDefault()
     }
-    const { carts } = props;
+    const { carts = [] } = props;
 
     return (
         <header id="header" >
@@ -218,8 +218,7 @@ const Header2 = (props) => {
                                                         </div>
                                                         <div className="contact-ft">
                                                             <ul>
-                                                                <li><i className="fi flaticon-location"></i>68D, Belsion Town
-                                                                    2365 <br /> Fna city, LH 3656, USA</li>
+                                                                <li><i className="fi flaticon-location"></i>Meru Town</li>
                                                                 <li><i className="fi flaticon-telephone"></i>+254768269926</li>
                                                                 <li><i className="fi flaticon-email"></i>moderninteriorkenya@gmail.com</li>
                                                             </ul>
