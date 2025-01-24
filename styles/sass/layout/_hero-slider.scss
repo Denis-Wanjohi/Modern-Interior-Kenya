@@ -767,10 +767,12 @@ hero style 3
 
 	@include media-query(1199px) {
 		height: 680px;
+		display: block;
 	}
 
 	@include media-query(991px) {
-		height: fit-content;
+		height: 680px;
+		display: block;
 	}
 
 	@include media-query(767px) {
@@ -903,7 +905,7 @@ hero style 3
 				object-fit: contain;
 				position: relative;
 				width: 400px;
-				height: 600px;
+				height: fit-content;
 				margin-right: auto;
 				margin-left: 20px;
 			}
