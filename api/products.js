@@ -50,7 +50,9 @@ const Products  = [
         Img2:marbleWhite2,
         Img3:marbleWhite3,
         Img4:marbleWhite4,
-        installationFee:false
+        installationFee:false,
+        installFee:500,
+        type:'contact paper',
     },
     {
         id:2,
@@ -65,7 +67,9 @@ const Products  = [
         Img2:marbleWhite2,
         Img3:marbleWhite3,
         Img4:marbleWhite4,
-        installationFee:false
+        installationFee:false,
+        installFee:500,
+        type:'contact paper',
     },
     {
         id:3,
@@ -80,7 +84,9 @@ const Products  = [
         Img2:marbleWhite2,
         Img3:marbleWhite3,
         Img4:marbleWhite4,
-        installationFee:false
+        installationFee:false,
+        installFee:500,
+        type:'contact paper',
     },
     {
         id:4,
@@ -95,7 +101,9 @@ const Products  = [
         Img2:marbleWhite2,
         Img3:marbleWhite3,
         Img4:marbleWhite4,
-        installationFee:false
+        installationFee:false,
+        installFee:500,
+        type:'contact paper',
     },
     {
         id:5,
@@ -110,7 +118,9 @@ const Products  = [
         Img2:wpcBrown2,
         Img3:wpcBrown3,
         // Img4:marbleWhite4,
-        installationFee:false
+        installationFee:false,
+        installFee:500,
+        type:'vinyl',
     },
     {
         id:6,
@@ -125,7 +135,9 @@ const Products  = [
         Img2:wpcDark2,
         Img3:wpcDark3,
         // Img4:marbleWhite4,
-        installationFee:false
+        installationFee:false,
+        installFee:500,
+        type:'vinyl',
     },
     {
         id:7,
@@ -140,7 +152,9 @@ const Products  = [
         Img2:vinyl5,
         Img3:vinyl7,
         Img4:vinyl8,
-        installationFee:false
+        installationFee:false,
+        installFee:500,
+        type:'vinyl',
     },
     {
         id:8,
@@ -155,7 +169,9 @@ const Products  = [
         Img2:marblePlainWhite,
         Img3:marbleBlack,
         Img4:marbleAllColors,
-        installationFee:false
+        installationFee:false,
+        installFee:500,
+        type:'contact paper',
     },
     {
         id:9,
@@ -170,7 +186,9 @@ const Products  = [
         Img2:contactPaper_3,
         Img3:contactPaper_1,
         Img4:contactPaper_4,
-        installationFee:false
+        installationFee:false,
+        installFee:500,
+        type:'contact paper',
     },
     {
         id:10,
@@ -185,7 +203,9 @@ const Products  = [
         Img2:brick_sample1,
         Img3:brick_sample2,
         // Img4:contactPaper_4,
-        installationFee:false
+        installationFee:false,
+        installFee:150,
+        type:'brick',
     }
 ]
 

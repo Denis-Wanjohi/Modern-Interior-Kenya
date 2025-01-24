@@ -1,13 +1,13 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import SimpleReactValidator from 'simple-react-validator';
 
 
 const ContactForm = () => {
-
+    const [isSubmitting,setSubmitting] = useState(false)
     const [forms, setForms] = useState({
         name: '',
         email: '',
-        subject: '',
         phone: '',
         message: ''
     });
@@ -24,18 +24,29 @@ const ContactForm = () => {
     };
 
     const submitHandler = e => {
+        setSubmitting(true)
         e.preventDefault();
         if (validator.allValid()) {
-            validator.hideMessages();
-            setForms({
-                name: '',
-                email: '',
-                subject: '',
-                phone: '',
-                message: ''
+            axios.post('http://localhost:3001/api/message',forms)
+            .then((res)=>{
+                validator.hideMessages();
+                setForms({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: ''
+                })
+                setSubmitting(false)
             })
+            .catch(err=>{
+                console.log(err)
+                alert('Error occured!! Please resubmit.')
+                setSubmitting(false)
+            })
+            
         } else {
             validator.showMessages();
+            setSubmitting(false)
         }
     };
 
@@ -78,25 +89,6 @@ const ContactForm = () => {
                         {validator.message('phone', forms.phone, 'required|phone')}
                     </div>
                 </div>
-                <div className="col col-lg-6 col-12">
-                    <div className="form-field">
-                        <select
-                            onBlur={(e) => changeHandler(e)}
-                            onChange={(e) => changeHandler(e)}
-                            value={forms.subject}
-                            type="text"
-                            name="subject">
-                            <option >Service</option>
-                            <option>Architecture</option>
-                            <option>The Rehearsal Dinner</option>
-                            <option>The Afterparty</option>
-                            <option>Videographers</option>
-                            <option>Perfect Cake</option>
-                            <option>All Of The Above</option>
-                        </select>
-                        {validator.message('subject', forms.subject, 'required')}
-                    </div>
-                </div>
                 <div className="col col-lg-12 col-12">
                     <textarea
                         onBlur={(e) => changeHandler(e)}
@@ -109,9 +101,13 @@ const ContactForm = () => {
                     {validator.message('message', forms.message, 'required')}
                 </div>
             </div>
-            <div className="submit-area">
-                <button type="submit" className="theme-btn">Submit Now</button>
-            </div>
+            {
+                !isSubmitting ?
+                <div className="submit-area">
+                    <button type="submit" className="theme-btn">Submit Now</button>
+                </div>
+                : ''
+            }
         </form >
     )
 }

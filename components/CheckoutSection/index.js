@@ -95,10 +95,9 @@ const CheckoutSection = (props) => {
             'user':forms,
             'cart':cartList
         }
-        axios.post('https://4e2f-102-219-209-193.ngrok-free.app/api/order',data)
+        axios.post('http://localhost:3001/api/order',data)
         .then((res)=>{
             if(res.data.message == 'Email sent successfully to the office'){
-                alert('sent')
                 setForms({
                     fname :'',
                     lname :'',
@@ -469,7 +468,7 @@ const CheckoutSection = (props) => {
                                                         </TableCell>
                                                         <TableCell
                                                             align="right">
-                                                            {item.installationFee ? <span>Ksh.{(item.qty * item.price) + (500 * item.qty)}  </span>: <span>Ksh.{item.qty * item.price}</span>}
+                                                            {item.installationFee ? <span>Ksh.{(item.qty * item.price) + (item.installFee * item.qty)}  </span>: <span>Ksh.{item.qty * item.price}</span>}
                                                             {/* Ksh.{item.qty * item.price} */}
                                                             </TableCell>
                                                     </TableRow>

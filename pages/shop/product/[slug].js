@@ -52,7 +52,7 @@ const SeviceSinglePage = (props) => {
                                     </div>
                                     <div>
                                         <p>Price per Roll: Khs. {selectedProduct?.price}/=</p>
-                                        <p>1 Roll measurement: {selectedProduct?.width}m * {selectedProduct?.height}m =  {selectedProduct?.width * selectedProduct.height}m<sup>2</sup> </p>
+                                        <p>1 Roll measurement: {selectedProduct?.width}m * {selectedProduct?.height}m =  {(selectedProduct?.width * selectedProduct.height).toFixed(2)}m<sup>2</sup> </p>
                                     </div>
                                     <div className="row mt-4">
                                         <div className="col-md-6 col-sm-6 col-12">

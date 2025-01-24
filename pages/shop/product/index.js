@@ -45,7 +45,7 @@ const SeviceSinglePage = (props) => {
                                         <h3>{selectedProduct?.title}</h3>
                                     </div>
                                     <div>
-                                        <p>Price per Roll: Khs. 500/=</p>
+                                        <p>Price per Roll: Khs. {selectedProduct?.price}/=</p>
                                         1 Roll measurement: 5m<sup>2</sup> 
                                     </div>
                                     <div className="row mt-4">

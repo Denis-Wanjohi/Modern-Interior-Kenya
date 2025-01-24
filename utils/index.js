@@ -8,7 +8,7 @@ function getFeaturedProducts(products) {
 
 function totalPrice(items) {
     return items.reduce((itemAcc, item) => {
-        return itemAcc += (item.installationFee ? (item.price * item.qty) + (500 * item.qty) : item.price * item.qty);
+        return itemAcc += (item.installationFee ? (item.price * item.qty) + (item.installFee * item.qty) : item.price * item.qty);
     }, 0);
 }
 

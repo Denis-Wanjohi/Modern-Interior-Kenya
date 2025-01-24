@@ -3,73 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEW ORDER</title>
+    <title>New Order </title>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f0f8ff;">
-    <header style="background-color: #3498db; padding: 20px; border-radius: 5px; color: #ffffff;">
-        <div style="text-align: center; padding: 20px 0;">
-            <img src="http://127.0.0.1:5500/backend/public/Modern%20Interior%20Kenya%20Logo.png" alt="McLaren Logo" style="width: 150px;">
-        </div>
-        <h1 style="color: #ffffff; margin-bottom: 10px; text-align: center;">New Order</h1>
-        <div style="margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
-            <strong>Name:</strong> <span style="color: #e8f4fc;">{{user.fname}} {{user.lname}}</span>
-        </div>
-        <div style="margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
-            <strong>Email:</strong> <span style="color: #e8f4fc;">{{user.email}}</span>
-        </div>
-        <div style="margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
-            <strong>Phone:</strong> <span style="color: #e8f4fc;">{{user.phone}}</span>
-        </div>
-        <div style="margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
-            <strong>Location:</strong> <span style="color: #e8f4fc;">{{user.location}}</span>
-        </div>
-        <div style="background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
-            <strong>County:</strong> <span style="color: #e8f4fc;">{{user.county}}</span>
-        </div>
-    </header>
-
-    <main style="margin-top: 20px; background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-        <h2 style="color: #3498db; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Order Details</h2>
-        <table style="width: 100%; border-collapse: collapse;">
-            <thead>
-                <tr style="background-color: #3498db; color: #ffffff;">
-                    <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Item</th>
-                    <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Quantity</th>
-                    <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Installation Fee</th>
-                    <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Price</th>
-                    <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each cart}}
-                <tr>
-                    <td style="padding: 12px; border: 1px solid #e8f4fc;">{{title}}</td>
-                    <td style="padding: 12px; border: 1px solid #e8f4fc;">{{qty}}</td>
-                    <td style="padding: 12px; border: 1px solid #e8f4fc;">ksh.{{installationFee }}</td>
-                    <td style="padding: 12px; border: 1px solid #e8f4fc;">Ksh. {{price}}</td>
-                    <td style="padding: 12px; border: 1px solid #e8f4fc;">Ksh. {{total}}</td>
-                </tr>
-                {{/each}}
-            </tbody>
-            <tfoot>
-                <tr style="background-color: #f9f9f9;">
-                    <td colspan="4" style="padding: 12px; border: 1px solid #e8f4fc; text-align: right;"><strong>Total:</strong></td>
-                    <td style="padding: 12px; border: 1px solid #e8f4fc; color: #e67e22;"><strong>Ksh.{{total}}</strong></td>
-                </tr>
-            </tfoot>
-        </table>
-        <div style="font-family: 'Comic Sans MS'; margin-top: 20px; text-align: center; font-size: 0.9em; color: #666; background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <p style="font-weight: 900;"> Order note:</p>
-            <p>{{user.note}}</p>
-        </div>
-    </main>
-
-    <footer style="margin-top: 20px; text-align: center; font-size: 0.9em; color: #666; background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-        <!-- <p>Thank you for your order! If you have any questions, please contact our customer support.</p> -->
-        <!-- <p><a href="{{support_link}}" style="color: #3498db; text-decoration: none; font-weight: bold;">Customer Support</a></p> -->
-        <div style="background-color: #333; color: #ffffff; text-align: center; padding: 10px; font-size: 12px;">
-            <p>&copy; {{year}} Modern Interior Kenya. All rights reserved.</p>
-        </div>
-    </footer>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4;">
+    <table cellpadding="0" cellspacing="0" style="width: 100%; background-color: #ffffff; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <tr>
+            <td style="text-align: center; padding: 20px 0; background-color: #272624;">
+                <!--  https://4e2f-102-219-209-193.ngrok-free.app/backend/public/Modern%20Interior%20Kenya%20Logo.png -->
+                <img src="http://127.0.0.1:5500/backend/public/Modern%20Interior%20Kenya%20Logo.png" alt="Logo" style="width: 120px;">
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 20px;">
+                <h1 style="color: #FF8000; margin-bottom: 20px; text-align: center;">MODERN INTERIOR KENYA</h1>
+                <h4 style="color: #FF8000; margin-bottom: 20px; text-align: center;">NEW ORDER</h4>
+                <div style="margin-bottom: 10px; background-color: rgba(231, 139, 33, 0.658); padding: 10px; border-radius: 5px;">
+                    <strong>Name:</strong> <span style="color: #0a0a0a;">{{user.fname}} {{user.lname}}</span>
+                </div>
+                <div style="margin-bottom: 10px; background-color: rgba(231, 139, 33, 0.658); padding: 10px; border-radius: 5px;">
+                    <strong>Email:</strong> <span style="color: #0a0a0a;">{{user.email}}</span>
+                </div>
+                <div style="margin-bottom: 10px; background-color: rgba(231, 139, 33, 0.658); padding: 10px; border-radius: 5px;">
+                    <strong>Phone:</strong> <span style="color: #0a0a0a;">{{user.phone}}</span>
+                </div>
+                <div style="margin-bottom: 10px; background-color: rgba(231, 139, 33, 0.658); padding: 10px; border-radius: 5px;">
+                    <strong>Location:</strong> <span style="color: #0a0a0a;">{{user.location}}</span>
+                </div>
+                <div style="background-color: rgba(231, 139, 33, 0.658); padding: 10px; border-radius: 5px;">
+                    <strong>County:</strong> <span style="color: #0a0a0a;">{{user.county}}</span>
+                </div>
+                
+                <h2 style="color: #FF8000; border-bottom: 2px solid #0a0a0a; padding-bottom: 10px;">Order Details</h2>
+                <table cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <thead>
+                        <tr style="background-color: #0a0a0a; color: #ffffff;">
+                            <th style="text-align: left; padding: 10px; border: 1px solid #e67300;">Item</th>
+                            <th style="text-align: center; padding: 10px; border: 1px solid #e67300;">Quantity</th>
+                            <th style="text-align: right; padding: 10px; border: 1px solid #e67300;">Price</th>
+                            <th style="text-align: right; padding: 10px; border: 1px solid #e67300;">Installation Fee</th>
+                            <th style="text-align: right; padding: 10px; border: 1px solid #e67300;">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each cart}}
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #e8f4fc;">{{title}}</td>
+                            <td style="padding: 12px; border: 1px solid #e8f4fc;">{{qty}}</td>
+                            <td style="padding: 12px; border: 1px solid #e8f4fc;">Ksh. {{price}}</td>
+                            <td style="padding: 12px; border: 1px solid #e8f4fc;">ksh.{{installationFee }}</td>
+                            <td style="padding: 12px; border: 1px solid #e8f4fc;">Ksh. {{total}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                    <tfoot>
+                        <tr style="background-color: #f9f9f9;">
+                            <td colspan="4" style="padding: 12px; border: 1px solid #e8f4fc; text-align: right;"><strong>Total:</strong></td>
+                            <td style="padding: 12px; border: 1px solid #e8f4fc; color: #e67e22;"><strong>Ksh.{{total}}</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+                <div style="font-family: 'Comic Sans MS'; margin-top: 20px; text-align: center; font-size: 0.9em; color: #666; background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <p style="font-weight: 900;"> Order note:</p>
+                    <p>{{user.note}}</p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #333; color: #ffffff; text-align: center; padding: 10px; font-size: 12px;">
+                <p>&copy; {{year}} Modern Interior Kenya. All rights reserved.</p>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

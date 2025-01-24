@@ -19,8 +19,6 @@ const ServiceSidebar = ({addToCart,product}) => {
     const [totalPrice,setTotalPrice] = useState(0)
     const [finalPrice,setFinalPrice] = useState(0)
     const [installationFee,setInstallatonFee] = useState(false)
-    // alert(product.title)
-    // const {addToCart} = props
     const SubmitHandler = (e) => {
         console.log(e)
         e.preventDefault()
@@ -64,8 +62,8 @@ const ServiceSidebar = ({addToCart,product}) => {
     }
     
     const calculateRolls = (t)=>{
-        setRolls(Math.ceil(t/5))
-        calculateTotalPrice(Math.ceil(t/5))
+        setRolls(Math.ceil(t/(product.width * product.height).toFixed(2)))
+        calculateTotalPrice(Math.ceil(t/(product.width * product.height).toFixed(2)))
     }
 
     const calculateTotalPrice = (r)=>{
@@ -79,7 +77,7 @@ const ServiceSidebar = ({addToCart,product}) => {
             setFinalPrice(totalPrice)
         }else{
             setInstallatonFee(true)
-            let total = totalPrice + (500 * rolls)
+            let total = totalPrice + (product.installFee * rolls)
             setFinalPrice(total)
         }
     }
@@ -112,7 +110,12 @@ const ServiceSidebar = ({addToCart,product}) => {
                             <span>Price:</span>Ksh. {product.price}
                         </h6>
                         <h6>
-                            <span>1 Roll:</span>({product.height}m*{product.width}m) {product.width * product.height}m<sup>2</sup>
+                            <span>
+                            {product.type != 'brick'?
+                                "1 Roll" : "1 Piece"
+                            }
+                                :
+                            </span>({product.height}m*{product.width}m) {(product.width * product.height).toFixed(2)}m<sup>2</sup>
                         </h6>
                     </div>
                     <div className="measurements">
@@ -151,14 +154,21 @@ const ServiceSidebar = ({addToCart,product}) => {
                     </div>
                     <div className="rolls">
                         <div className="flex-box">
-                            <p>5m<sup>2</sup> </p>
+                            <p>{(product.width * product.height).toFixed(2)}m<sup>2</sup> </p>
                             <p> = </p>
-                            <p>1 Roll</p>
+                            <p>{product.type != 'brick'?
+                                "1 Roll" : "1 Piece"
+                            }</p>
                         </div>
                         <div className="flex-box">
                             <p>{total }m<sup>2</sup></p>
                             <p> = </p>
-                            <p>{rolls != null ? rolls : 0} {rolls != 1? "Rolls" : "Roll"}</p>
+                            {product.type != 'brick'?
+                                <p>{rolls != null ? rolls : 0} {rolls != 1? "Rolls" : "Roll"}</p>
+                                :<p>{rolls != null ? rolls : 0} {rolls != 1? "Pieces" : "Piece"}</p>
+
+                            }
+                            {/* <p>{rolls != null ? rolls : 0} {rolls != 1? "Rolls" : "Roll"}</p> */}
                         </div>
                     </div>
                     <div className="summary">
@@ -168,7 +178,12 @@ const ServiceSidebar = ({addToCart,product}) => {
                         </div>
                         <div className='flex-box'>
                             <h6>Rolls: </h6>
-                            <p>{rolls != null ? rolls : 0} {rolls != 1? "Rolls" : "Roll"}</p>
+                            {product.type != 'brick'?
+                                <p>{rolls != null ? rolls : 0} {rolls != 1? "Rolls" : "Roll"}</p>
+                                :<p>{rolls != null ? rolls : 0} {rolls != 1? "Pieces" : "Piece"}</p>
+
+                            }
+                            {/* <p>{rolls != null ? rolls : 0} {rolls != 1? "Rolls" : "Roll"}</p> */}
                         </div>
                         <div className='flex-box'>
                             <h6>Total: </h6>
@@ -179,8 +194,10 @@ const ServiceSidebar = ({addToCart,product}) => {
                         <div className='installation-fee-section'>
                             <div className='flex-box'>
                                 <div className='installation-fee'>
-                                    <p>Installation fee <span>(per roll)</span>: </p>  
-                                    <h6> Ksh.500</h6>
+                                    <p>Installation fee <span>
+                                    {product.type != 'brick'?"(per roll)": "(per piece)" }
+                                        </span>: </p>  
+                                    <h6> Ksh.{product.installFee}</h6>
                                 </div>
                                 {
                                     installationFee ?
@@ -193,7 +210,7 @@ const ServiceSidebar = ({addToCart,product}) => {
                                 installationFee ?
                                 <div className='installation-total'>
                                     <h6>Installation:</h6>
-                                    <p>Ksh.500 *  {rolls != null ? rolls : 0}  rolls = Ksh.{500*rolls}</p>
+                                    <p>Ksh.{product.installFee} *  {rolls != null ? rolls : 0}  rolls = Ksh.{product.installFee * rolls}</p>
                                 </div>
                                 : ''
                             }
