@@ -7,9 +7,12 @@ import Projects from '../../api/project'
 import { connect } from 'react-redux';
 import { removeFromCart } from '../../store/actions/action';
 import { totalPrice } from '../../utils';
+import {Button} from 'primereact/button'
+import { Router, useRouter } from 'next/router';
 
 
 const Header2 = (props) => {
+    console.log(useRouter().pathname.includes('admin'))
     const [menuActive, setMenuState] = useState(false);
     // const [menuActive, setMenuState] = useState(false);
     const [cartActive, setcartState] = useState(false);
@@ -61,13 +64,6 @@ const Header2 = (props) => {
                                     <ul className="nav navbar-nav mb-2 mb-lg-0">
                                         <li className="menu-item-has-children">
                                             <Link onClick={ClickHandler} href="/">Home</Link>
-                                            {/* <ul className="sub-menu">
-                                                <li><Link onClick={ClickHandler} href="/home">Home Style 1</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/home2">Home Style 2</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/home3">Home Style 3</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/home4">Home Style 4</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/home5">Home Style 5</Link></li>
-                                            </ul> */}
                                         </li>
                                         <li><Link onClick={ClickHandler} href="/about">About</Link></li>
                                         <li><Link onClick={ClickHandler} href="/shop">Shop</Link></li>
@@ -78,33 +74,6 @@ const Header2 = (props) => {
                                             <Link onClick={ClickHandler} href="/project">Project</Link>
                                             
                                         </li>
-                                        {/* <li className="menu-item-has-children">
-                                            <Link onClick={ClickHandler} href="/products">Shop</Link> */}
-                                            {/* <ul className="sub-menu">
-                                                <li><Link onClick={ClickHandler} href="/project">Project</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/project-s2">Project S2</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/project/Architecture-Design">Project Single</Link></li>
-                                            </ul> */}
-                                        {/* </li> */}
-                                        {/* <li className="menu-item-has-children">
-                                            <Link onClick={ClickHandler} href="/blog">Blog</Link>
-                                            <ul className="sub-menu">
-                                                <li><Link onClick={ClickHandler} href="/blog">Blog right sidebar</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/blog-left-sidebar">Blog left sidebar</Link></li>
-                                                <li><Link onClick={ClickHandler} href="/blog-fullwidth">Blog fullwidth</Link></li>
-                                                <li className="menu-item-has-children">
-                                                    <Link onClick={ClickHandler} href="/">Blog details</Link>
-                                                    <ul className="sub-menu">
-                                                        <li><Link onClick={ClickHandler} href="/blog-single/Best-Architecture-Design">Blog details right sidebar</Link>
-                                                        </li>
-                                                        <li><Link onClick={ClickHandler} href="/blog-single-left-sidebar/Best-Architecture-Design">Blog details left
-                                                            sidebar</Link></li>
-                                                        <li><Link onClick={ClickHandler} href="/blog-single-fullwidth/Best-Architecture-Design">Blog details
-                                                            fullwidth</Link></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li> */}
                                         <li className="menu-item-has-children">
                                             {/* <Link onClick={ClickHandler} href="/">Pages</Link> */}
                                             <ul className="sub-menu">
@@ -121,12 +90,18 @@ const Header2 = (props) => {
                                             </ul>
                                         </li>
                                         <li><Link onClick={ClickHandler} href="/contact">Contact</Link></li>
-                                        <li>{cartActive == false}</li>
+                                        {
+                                           useRouter().pathname.includes('admin') ?
+                                            <li><Link onClick={ClickHandler} href="/contact">Add Product</Link></li>
+                                            :''
+
+                                        }
                                     </ul>
                                 </div>
                             </div>
                             
-                            <div className="col-lg-1 col-md-1 col-2 right-menu">
+                            <div className="col-lg-1 col-md-1 col-1 right-menu">
+                               
                                 {/* CART */}
                                 <div className="header-right">
                                     {/* <div className="header-search-form-wrapper">

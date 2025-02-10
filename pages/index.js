@@ -47,13 +47,19 @@ import Logo from '/public/images/logo.svg'
 import About3 from '../components/about3';
 import BlogSection from '../components/BlogSection/BlogSection';
 import Footer from '../components/footer/Footer';
-
+import { Button } from 'primereact/button';
 
 const HomePage3 = (props) => {
 
     return (
         <div>
             <Navbar2 Logo={Logo} hclass={'wpo-header-style-2'} />
+            {/* <div>
+                one 
+                <div className="card flex justify-content-center">
+                    <Button severity='success' label="Check" icon="pi pi-check" />
+                </div>
+            </div> */}
             <Hero3 />
             <About3 />
             <ServiceSection2 />
